@@ -1,573 +1,1321 @@
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<title>Rachit Poudel Portfolio</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-		<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-		<link rel="stylesheet" href="css/animate.css">
-		
-		<link rel="stylesheet" href="css/owl.carousel.min.css">
-		<link rel="stylesheet" href="css/owl.theme.default.min.css">
-		<link rel="stylesheet" href="css/magnific-popup.css">
-
-		<link rel="stylesheet" href="css/aos.css">
-
-		<link rel="stylesheet" href="css/ionicons.min.css">
-		
-		<link rel="stylesheet" href="css/flaticon.css">
-		<link rel="stylesheet" href="css/icomoon.css">
-		<link rel="stylesheet" href="css/style.css">
-
-
-
-	<style>
-
-	/*======================================
-	//--//-->   ABOUT
-	======================================*/
-
-	.about-mf .box-shadow-full {
-	padding-top: 4rem;
-	padding-bottom: 4rem;
-	}
-
-	.about-mf .about-img {
-	margin-bottom: 2rem;
-	}
-
-	.about-mf .about-img img {
-	margin-left: 10px;
-	}
-
-
-	.skill-mf .progress {
-	/* background-color: #cde1f8; */
-	margin: .5rem 0 1.2rem 0;
-	border-radius: 0;
-	height: .7rem;
-	}
-
-	.skill-mf .progress .progress-bar {
-	height: .7rem;
-	background-color: #ffbd39;
-	}
-
-
-	/* Animation styles */
-	#typing-animation {
-	position: relative;
-	font-size: 30px;
-	font-weight: bold;
-	color: rgb(255, 255, 255);
-	overflow: hidden;
-	white-space: nowrap;
-	animation: typing 3s steps(20, end) infinite;
-	}
-
-	#typing-animation:before 	{
-	content: "";
-	/* position: absolute; */
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	background-color: #ccc;
-	animation: typing-cursor 0.5s ease-in-out infinite;
-	}
-
-	@keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
-	}
-
-	@keyframes typing-cursor {
-	from {
-		width: 5px;
-	}
-	to {
-		width: 0;
-	}
-	}
-
-
-	/* project image zoom effect */
-
-	.zoom-effect {
-	overflow: hidden;
-	transition: transform 0.3s ease-out;
-	}
-
-	.zoom-effect:hover {
-	transform: scale(1.1);
-	}
-
-
-	</style>
-
-
-	</head>
-	<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-		
-		
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-			<div class="container">
-			<a class="navbar-brand" href="index.html">Rachit Poudel</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-				<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-				<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-				<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-				<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-				<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
-			</div>
-			</div>
-		</nav>
-		<section id="home-section" class="hero">
-			<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-				<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-					<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.jpg);">
-					<div class="overlay"></div>
-					</div>
-					<div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-						<div class="text">
-							<span class="subheading">Hello!</span>
-							<h1 class="mb-4 mt-3">I'm <span>Rachit Poudel</span></h1>
-
-							<!-- Element to contain animated typing -->
-							<span id="typing-animation"></span>
-
-							<script>
-
-							// Initialize the typing animation
-							const typingAnimationElement = document.getElementById('typing-animation');
-
-							// Create an array of typing text
-							const typingTexts = [
-							'Software Developer',
-							'Content Creator',
-							];
-
-							// Create a function to display the typing animation for a given text
-							function playTypingAnimation(text) {
-							// Loop through each character and add it to the element
-							for (let i = 0; i < text.length; i++) {
-								setTimeout(() => {
-								typingAnimationElement.textContent += text[i];
-								}, i * 200); // Increase the delay to slow down the typing animation
-							}
-
-							// Once the animation is complete, reset the text and start over
-							setTimeout(() => {
-								typingAnimationElement.textContent = '';
-								playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-							}, text.length * 200);
-							}
-
-							// Start the typing animation loop
-							playTypingAnimation(typingTexts[0]);
-
-							</script>
-							<p>
-								<a href="https://github.com/rachitpoudel101" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-						</div>
-					</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</section>
-
-
-
-		<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-			<div class="container">
-				<div class="row">
-					<div class="row d-flex align-items-stretch">
-					<!-- <div class="row d-flex"> -->
-						<div class="col-md-6 col-lg-5 d-flex">
-							<div class="img-about img d-flex align-items-stretch">
-								<div class="overlay">
-									<div class="row">
-										<div class="col-sm-6 col-md-5">
-										<div class="about-img">
-											<img src="images/about-me.jpeg" class="img-fluid rounded b-shadow-a" alt="">
-										</div>
-										</div>
-										<!-- Details next to profile image -->
-										<div class="col-sm-6 col-md-7">
-										<div class="about-info">
-											<p><span class="title-s">Name: </span> <span>Rachit Poudel</span></p>
-											<p><span class="title-s">Address: </span> <span>Kathmandu, Nepal</span></p>
-										</div>
-										</div>
-									</div>
-
-									<div class="skill-mf">
-										<p class="title-s">Skills</p>
-										<span>PYTHON</span> <span class="pull-right">95%</span>
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										
-										<span>SQL</span> <span class="pull-right">85%</span>
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										
-										<span>PHP</span> <span class="pull-right">90%</span>
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										
-										<span>JavaScript</span> <span class="pull-right">50%</span>
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										
-										<span>Django</span> <span class="pull-right">80%</span>
-										<div class="progress">
-											<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-							<div class="row justify-content-start pb-3">
-								<div class="col-md-12 heading-section ftco-animate">
-									
-									<h1 class="big">About</h1>
-									<h2 class="mb-4">About Me</h2>
-									<p>As an enthusiastic and dedicated IT student, I am passionate about leveraging technology to solve real-world problems. I constantly seek opportunities to expand my knowledge and skills through internships, projects, and research. I aim to contribute to innovative tech solutions that drive efficiency and improvement. I am particularly interested in e.g., artificial intelligence, cloud computing, or data analytics.</p>
-									<ul class="about-info mt-4 px-md-0 px-2">
-										<li class="d-flex"><span>Profile:</span> <span>Web Developer </span></li>
-										<li class="d-flex"><span>Education:</span> <span>Bachelor of Computer Science</span></li>
-										<li class="d-flex"><span>Language:</span> <span>Nepali, English, Hindi</span></li>
-										<li class="d-flex"><span>P.M Tool:</span> <span>Git, Github, Jira &amp; Trello</span></li>
-										<li class="d-flex"><span>Dev Ops:</span> <span>Amazon Web Server(AWS), Microsoft Azure &amp; Google Cloud Service(GCS)</span></li>
-										<li class="d-flex"><span>Interest:</span> <span>Traveling, Travel, Listing Music</span></li>
-										
-									</ul>
-								</div>
-							</div>
-
-
-							<div class="counter-wrap ftco-animate d-flex mt-md-3">
-								<div class="text">
-									<p class="mb-4">
-										<span class="number" data-number="7">0</span> <span>+</span>
-										<span>&nbsp; Projects completed</span>
-									</p>
-									<p><a href="https://www.linkedin.com/in/rachit-poudel-498a4b2aa/?originalSubdomain=np" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-
-		
-		<section class="ftco-section ftco-no-pb" id="resume-section">
-			<div class="container">
-				<div class="row justify-content-center pb-5">
-			<div class="col-md-10 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Resume</h1>
-				<h2 class="mb-4">Resume</h2>
-				<div class="row justify-content-center mt-5">
-					<div class="col-md-6 text-center ftco-animate">
-						<p><a href="./CV - Rachit.pdf" class="btn btn-primary py-4 px-5">Download CV</a></p>
-					</div>
-				</div>
-			</div>
-			</div>
-			<br>
-			<div class="row">
-				<h1 class="big-4">Certification</h1>
-				<div class="underline"></div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-md-6">
-				  <div>
-					<span class="date">29 August 2024</span>
-					<h2>Data Science Expert with Python</h2>
-					<img src="Certificate.png" class="img-fluid" style="max-width: 80%;height: 200px;">
-				  </div>
-				</div>
-			  
-				<div class="col-md-6">
-				  <div>
-					<span class="date">15 September 2024</span>
-					<h2>Python Libraries for Data Science</h2>
-					<img src="Certificate2.jpeg" class="img-fluid" style="max-width: 85%; height: 200px;">
-				  </div>
-				</div>
-			  </div>
-			  
-			  
-			  
-			  
-			<br>
-			<br>
-			<div class="row">
-				<h1 class="big-4">Education</h1>
-				<div class="underline"></div>
-			</div>
-			<br>
-			
-				<div class="row">
-					<div class="col-md-6">
-						<div class="resume-wrap ftco-animate">
-							<span class="date">2022-2025</span>
-							<h2>Bachelor of Computer Science</h2>
-							<span class="position">University Of Wolverhampton</span>
-							<p class="mt-4">Grade: Running</p>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="resume-wrap ftco-animate">
-							<span class="date">2019-2021</span>
-							<h2>Higher Secondary School</h2>
-							<span class="position">Narayani Public Collage</span>
-							<p class="mt-4">Grade: 2.72 </p>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="resume-wrap ftco-animate">
-							<span class="date">2008-2018</span>
-							<h2> Secondary School</h2>
-							<span class="position">Narayani English Public Secondary School</span>
-							<p class="mt-4">Grade: 2.90 </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-			<<!--Projects-->>
-
-		<section class="ftco-section" id="project-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-			<div class="col-md-7 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Projects</h1>
-				<h2 class="mb-4">Projects</h2>
-				<p>Below are the sample of the Web development using HTML, CSS, JS, Django etc.</p>
-			</div>
-			</div>
-			<div class="row d-flex">
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rachitpoudel101/weather_app" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpeg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-
-					<h3 class="heading"><a href="https://github.com/rachitpoudel101/weather_app">Weather Web Application.</a></h3>
-					<p>I have used HTML, CSS for the Frontend ans js, Php is used as backend where js is used for featch the api and load the value in frontend and php is used for the datastorage of the past weeks..</p>
-				</div>
-				</div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rachitpoudel101/Vchat-from-DJnago" class="block-20 zoom-effect" style="background-image: url('images/proj_2.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-
-					<h3 class="heading"><a href="https://github.com/rachitpoudel101/Vchat-from-DJnago">Vedio-Chat Web Application Using Django.</a></h3>
-					<p>I have made a Vedio chat web application where user can join through the same room id frontend I have used html, css(bootstrap), and for the api featch I have used js and for the tocken I have used rest framework of django and the data will save in the session storage of the web browser. .</p>
-				</div>
-				</div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry">
-				<a href="https://github.com/rachitpoudel101/Lugga_COllab" class="block-20 zoom-effect" style="background-image: url('images/proj_3.png');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-
-					<h3 class="heading"><a href="https://github.com/rachitpoudel101/Lugga_COllab"></a> E-commerece</h3>
-					<p>I have created the E-commerece using HTML,CSS(bootstrap), as frontend andd JS, PHP as the backend it have admin oannel to add the poroduct and to check the order placed by customer, And other funcationality like Add to cart, My wishlist etc is also added in it.</p>
-				</div>
-				</div>
-			</div>
-			</div>
-		<br>
-
-			<div class="row d-flex justify-content-center">  
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-					<a href="" class="block-20 zoom-effect" style="background-image: url('images/proj_4.png');">
-					</a>
-					<div class="text mt-3 float-right d-block">
-	
-					<h3 class="heading"><a href="">To-do Application Using Django &amp; REST Framework</a></h3>
-					<p>I have created the TO-DO Aoolication usiong dajngo and the rest framework i have used html, css, js as frontend and the django as the backend and the database and the REST framework is used to create the token for the every user id and for the new todo. </p>
-					</div>
-				</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		</section>
-
-		<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container">
-			<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-				<div class="block-18">
-				<div class="text">
-					<strong class="number" data-number="12">0</strong>
-					<span>Projects</span>
-				</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpeg)">
-				<!-- <div class="container"> -->
-					<div class="row justify-content-center">
-						<div class="col-md-7 ftco-animate text-center">
-							<h2>More projects on<span> Github  </span> </h2>
-							<div class="heading"> <h4> I love to Create webapplication &amp; managment application </h4>
-							<br>
-							<p><a href="https://github.com/rachitpoudel101" class="btn btn-primary py-3 px-5">GitHub</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-
-		<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-			<div class="col-md-7 heading-section text-center ftco-animate">
-				<h1 class="big big-2">Contact</h1>
-				<h2 class="mb-4">Contact Me</h2>
-				<p>Below are the details to reach out to me!</p>
-			</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5">
-			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-				<div class="align-self-stretch box p-4 text-center">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="icon-map-signs"></span>
-					</div>
-					<h3 class="mb-4">Address</h3>
-					<p>Kathmandu, Nepal</p>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-				<div class="align-self-stretch box p-4 text-center">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="icon-phone2"></span>
-					</div>
-					<h3 class="mb-4">Contact Number</h3>
-					<p><a href="9848553543"> +977 9848553543</a></p>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-				<div class="align-self-stretch box p-4 text-center">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="icon-paper-plane"></span>
-					</div>
-					<h3 class="mb-4">Email Address</h3>
-					<p><a href="pouderachit4@gmail.com">poudelrachit4@gmail.com</a></p>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-				<div class="align-self-stretch box p-4 text-center">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="icon-globe"></span>
-					</div>
-					<h3 class="mb-4">Download Resume</h3>
-					<p><a href="#resume-section">resumelink</a></p>
-				</div>
-			</div>
-
-			<div class="container">
-				<br>
-				<br>
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>Have a<span> Question?  </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSebLnlKc8TzDFlNHuaFnyXGK4M-mEGDwxwMdM6sXbhNs94I3A/viewform?usp=sf_link" class="btn btn-primary py-3 px-5">Click Here</a> </h2>
-					</div>
-				</div>
-					<br>
-						<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-						<li class="ftco-animate normal-txt">Find me on  </li>
-						<li class="ftco-animate"><a href="https://www.linkedin.com/in/rachit-poudel-498a4b2aa/?originalSubdomain=np"><span class="icon-linkedin"></span></a></li>  
-						<li class="ftco-animate"><a href="https://www.facebook.com/rachit.poudel.100"><span class="icon-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="https://www.instagram.com/rachi_tpoudel/"><span class="icon-instagram"></span></a></li>
-						</ul>
-					<br>
-			</div>
-	</div>
-	</section>
-
-
-	
-		
-		<footer class="ftco-footer ftco-section">
-			<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-	
-				<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-				</div>
-			</div>
-			</div>
-		</footer>
-
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	
-	<script src="js/main.js"></script>
-		
-	</body>
-	</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="./tech_stacks/python.png" type="image/png">
+  <link rel="apple-touch-icon" href="./tech_stacks/python.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachit Poudel | Django Developer</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --python-blue: #3776AB;
+      --python-yellow: #FFD43B;
+      --editor-bg: #1E1E2E;
+      --editor-text: #CDD6F4;
+      --keyword: #F5C2E7;
+      --string: #A6E3A1;
+      --comment: #7F849C;
+      --method: #89DCEB;
+      --symbol: #F38BA8;
+      --constant: #FAB387;
+      --function: #89B4FA;
+      --class: #74C7EC;
+    }
+
+    * {
+      font-family: 'Fira Code', monospace;
+    }
+
+    body {
+      background-color: var(--editor-bg);
+      color: var(--editor-text);
+    }
+
+    .code-keyword {
+      color: var(--keyword);
+    }
+
+    .code-string {
+      color: var(--string);
+    }
+
+    .code-comment {
+      color: var(--comment);
+    }
+
+    .code-method {
+      color: var(--method);
+    }
+
+    .code-symbol {
+      color: var(--symbol);
+    }
+
+    .code-constant {
+      color: var(--constant);
+    }
+
+    .code-function {
+      color: var(--function);
+    }
+
+    .code-class {
+      color: var(--class);
+    }
+
+    .line-numbers {
+      color: var(--comment);
+      text-align: right;
+      padding-right: 1rem;
+      user-select: none;
+      border-right: 1px solid rgba(127, 132, 156, 0.3);
+    }
+
+    .python-blue {
+      color: var(--python-blue);
+    }
+
+    .python-bg {
+      background-color: var(--python-blue);
+    }
+
+    .active-link {
+      color: var(--python-blue);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #21252b;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #3e4451;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4b5363;
+    }
+
+    /* Add this to your CSS styles to fix the transparent navigation on mobile */
+    @media (max-width: 768px) {
+      nav.fixed {
+        background-color: var(--editor-bg) !important;
+        border-bottom: 1px solid rgba(127, 132, 156, 0.3);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-scrolled {
+        background-color: rgba(30, 30, 46, 0.98) !important;
+        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.fixed.bg-opacity-90,
+      nav.fixed.md\:bg-opacity-90 {
+        background-opacity: 1 !important;
+      }
+
+      /* Make mobile menu more visible */
+      #mobile-menu {
+        background-color: var(--editor-bg);
+        border: 1px solid rgba(127, 132, 156, 0.3);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Improve mobile menu items */
+      #mobile-menu a {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(127, 132, 156, 0.1);
+      }
+
+      #mobile-menu a:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background-color: var(--function);
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      from, to {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .python-icon-bg {
+      position: fixed;
+      bottom: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      background-image: url('./tech_stacks/python.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.03;
+      z-index: -1;
+      transform: rotate(-15deg);
+    }
+
+    .python-icon-float {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-image: url('./tech_stacks/python.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.1;
+      z-index: -1;
+      animation: float-python 20s ease-in-out infinite;
+    }
+
+    .python-icon-float.one {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .python-icon-float.two {
+      top: 60%;
+      left: 15%;
+      width: 60px;
+      height: 60px;
+      animation-delay: -5s;
+    }
+
+    .python-icon-float.three {
+      top: 30%;
+      right: 15%;
+      width: 80px;
+      height: 80px;
+      animation-delay: -10s;
+    }
+
+    .python-icon-float.four {
+      bottom: 15%;
+      right: 10%;
+      width: 70px;
+      height: 70px;
+      animation-delay: -15s;
+    }
+
+    @keyframes float-python {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+      50% {
+        transform: translateY(0) rotate(0deg);
+      }
+      75% {
+        transform: translateY(20px) rotate(-5deg);
+      }
+    }
+
+    .section-header {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header:before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-image: url('./tech_stacks/python.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    /* Enhanced section transitions */
+    section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Python loading animation for page load */
+    .python-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--editor-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    }
+
+    .python-loader img {
+      width: 100px;
+      height: 100px;
+      animation: pulse-python 2s infinite;
+    }
+
+    @keyframes pulse-python {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+      }
+    }
+
+    /* Python accent for navbar */
+    nav.fixed:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--python-blue), transparent);
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background-color: rgba(55, 118, 171, 0.1);
+      color: var(--python-blue);
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid rgba(55, 118, 171, 0.2);
+    }
+
+    .project-card {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(127, 132, 156, 0.2);
+      background-color: rgba(30, 30, 46, 0.5);
+      border-radius: 0.5rem;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(55, 118, 171, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .approach-card {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(127, 132, 156, 0.2);
+      background-color: rgba(30, 30, 46, 0.5);
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .approach-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(55, 118, 171, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background-color: var(--python-blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--python-yellow);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--editor-text);
+      border: 2px solid rgba(127, 132, 156, 0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--python-blue);
+      color: var(--python-blue);
+      transform: translateY(-2px);
+    }
+
+    .hover\:python-blue:hover {
+      color: var(--python-blue);
+    }
+
+    .transition-colors {
+      transition-property: color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    /* Image animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .image-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Pulsing glow animation */
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.25; }
+      50% { opacity: 0.4; }
+    }
+
+    .pulse-glow {
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    /* Enhanced code scrolling */
+    .code-container {
+      position: relative;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Mobile responsive improvements */
+    @media (max-width: 768px) {
+      body {
+        font-size: 0.95rem;
+      }
+
+      pre {
+        max-width: calc(100vw - 3rem);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.85rem;
+        padding-bottom: 0.5rem;
+      }
+
+      section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .line-numbers {
+        padding-right: 0.6rem;
+        font-size: 0.8rem;
+      }
+
+      .project-card {
+        padding: 1rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.25rem;
+        min-height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .skill-tag {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.7rem;
+      }
+
+      input, textarea {
+        font-size: 1rem !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .fixed {
+        position: absolute;
+      }
+
+      #home {
+        padding-top: 7rem;
+      }
+
+      .skill-tag {
+        margin-right: 0.3rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .grid {
+        gap: 1rem !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <div class="python-loader">
+    <img src="./tech_stacks/python.png" alt="Python Loading">
+  </div>
+
+  <!-- Floating Python icons in the background -->
+  <div class="python-icon-float one"></div>
+  <div class="python-icon-float two"></div>
+  <div class="python-icon-float three"></div>
+  <div class="python-icon-float four"></div>
+
+  <!-- Large Python icon in the background -->
+  <div class="python-icon-bg"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-10 bg-editor-bg px-4 py-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex justify-between items-center">
+        <a href="#home" class="flex items-center space-x-2">
+          <span class="text-xl font-bold python-blue">rachit<span class="text-editor-text">.py</span></span>
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="hover:python-blue active-link" id="nav-home">Home</a>
+          <a href="#about" class="hover:python-blue" id="nav-about">About</a>
+          <a href="#skills" class="hover:python-blue" id="nav-skills">Skills</a>
+          <a href="#projects" class="hover:python-blue" id="nav-projects">Projects</a>
+          <a href="#opensource" class="hover:python-blue" id="nav-opensource">open_source</a>
+          <a href="#contact" class="hover:python-blue" id="nav-contact">Contact</a>
+          <a href="https://github.com/rachitpoudel101" target="_blank" class="text-gray-400 hover:text-white">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+        </div>
+
+        <button id="menu-toggle" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu with solid background -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 rounded-lg overflow-hidden bg-editor-bg border border-gray-700">
+      <div class="py-1">
+        <a href="#home" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">Home</a>
+        <a href="#about" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">About</a>
+        <a href="#skills" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">Skills</a>
+        <a href="#projects" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">Projects</a>
+        <a href="#opensource" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">open_source</a>
+        <a href="#contact" class="block px-4 py-3 text-base hover:bg-gray-700">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-12 md:pt-12 min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
+        <!-- Mobile: Image appears first, Desktop: Code block appears first -->
+        <div class="md:hidden w-full flex justify-center mb-8">
+          <div class="relative image-float">
+            <!-- Enhanced glow effect -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-python-blue to-yellow-500 rounded-full blur-xl opacity-25 pulse-glow"></div>
+
+            <!-- Image container with enhanced styling -->
+            <div class="relative z-10 rounded-full overflow-hidden border-4 border-gray-800 shadow-xl" style="width: 220px; height: 220px;">
+              <!-- Enhanced image -->
+              <img src="./images/bg_1.jpg" alt="Rachit Poudel" class="w-full h-full object-cover transform scale-105 transition-transform duration-700 hover:scale-110" style="filter: brightness(1.15) contrast(1.1);">
+
+              <!-- Subtle overlay to add depth -->
+              <div class="absolute inset-0 bg-gradient-to-t from-python-blue/10 to-transparent opacity-70 mix-blend-overlay"></div>
+            </div>
+
+            <!-- Decorative element -->
+            <div class="absolute -bottom-3 -right-3 w-20 h-20 bg-gradient-to-tr from-python-blue to-yellow-500 rounded-full blur-md opacity-30 animate-pulse"></div>
+          </div>
+        </div>
+
+        <!-- Code section - takes full width on mobile, 3/5 width on desktop -->
+        <div class="w-full md:w-3/5 space-y-6">
+          <div class="flex items-baseline code-container">
+            <div class="line-numbers pr-4 flex-shrink-0">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div>16</div>
+              <div>17</div>
+              <div>18</div>
+            </div>
+            <div class="overflow-x-auto">
+              <pre><span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+  <span class="code-comment"># About me</span>
+  <span class="code-keyword">def</span> <span class="code-method">__init__</span>(<span class="code-symbol">self</span>):
+    <span class="code-symbol">self</span>.name = <span class="code-string">"Rachit Poudel"</span>
+    <span class="code-symbol">self</span>.role = <span class="code-string">"Full-Stack Django Developer"</span>
+    <span class="code-symbol">self</span>.location = <span class="code-string">"Kathmandu, Nepal"</span>
+    <span class="code-symbol">self</span>.skills = [<span class="code-string">"Python"</span>, <span class="code-string">"Django"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"PHP"</span>, <span class="code-string">"PostgreSQL"</span>]
+    <span class="code-symbol">self</span>.experience = <span class="code-string">"2+ years"</span>
+    <span class="code-symbol">self</span>.passion = <span class="code-string">"Building elegant web applications"</span>
+
+  <span class="code-keyword">def</span> <span class="code-method">contact</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> {
+      <span class="code-symbol">"email"</span>: <span class="code-string">"rachit300poudel@gmail.com"</span>,
+      <span class="code-symbol">"github"</span>: <span class="code-string">"https://github.com/rachitpoudel101"</span>
+    }</pre>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-8">
+            <a href="#projects" class="btn btn-primary w-full sm:w-auto flex justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              View Projects
+            </a>
+            <a href="mailto:rachitpoudel@gmail.com" class="btn btn-outline w-full sm:w-auto flex justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <!-- Desktop image - hidden on mobile -->
+        <div class="hidden md:block md:w-2/5 flex justify-center">
+          <div class="relative image-float">
+            <!-- Enhanced glow effect -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-python-blue to-yellow-500 rounded-full blur-xl opacity-25 pulse-glow"></div>
+
+            <!-- Image container with enhanced styling -->
+            <div class="relative z-10 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl" style="width: 280px; height: 280px;">
+              <!-- Enhanced image -->
+              <img src="./images/bg_1.jpg" alt="Rachit Poudel" class="w-full h-full object-cover transform scale-105 transition-transform duration-700 hover:scale-110" style="filter: brightness(1.15) contrast(1.1);">
+
+              <!-- Subtle overlay to add depth -->
+              <div class="absolute inset-0 bg-gradient-to-t from-python-blue/10 to-transparent opacity-70 mix-blend-overlay"></div>
+            </div>
+
+            <!-- Decorative element -->
+            <div class="absolute -bottom-3 -right-3 w-24 h-24 bg-gradient-to-tr from-python-blue to-yellow-500 rounded-full blur-md opacity-30 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 md:mb-10">
+        <div class="flex items-baseline mb-8 md:mb-12 code-container">
+          <div class="line-numbers pr-4 flex-shrink-0">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <div class="overflow-x-auto">
+            <pre><span class="code-keyword">class</span> <span class="code-class">AboutMe</span>:
+  <span class="code-comment"># Learning about who I am and what I do</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-0 gap-8 md:gap-12">
+        <div class="space-y-6">
+          <div class="flex items-baseline code-container">
+            <div class="line-numbers pr-4 flex-shrink-0">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+            </div>
+            <div class="overflow-x-auto">
+              <pre><span class="code-keyword">class</span> <span class="code-class">AboutMe</span>:
+  <span class="code-keyword">def</span> <span class="code-method">bio</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> <span class="code-string">"""I'm a 20-year-old full-stack developer with over 2 years
+    of hands-on experience in Django. My passion lies in
+    creating dynamic web applications that combine elegant code
+    with exceptional user experiences."""</span>
+
+  <span class="code-keyword">def</span> <span class="code-method">journey</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> <span class="code-string">"""I've honed my skills in both front-end and back-end development,
+    specializing in Django. I thrive on tackling complex problems
+    and turning ideas into functional, scalable applications."""</span>
+
+  <span class="code-keyword">def</span> <span class="code-method">beyond_coding</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> <span class="code-string">"""When I'm not coding, I enjoy graphic design, music, and gaming.
+    These creative outlets complement my development work."""</span></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 md:py-20 bg-gray-900 bg-opacity-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 md:mb-10">
+        <div class="flex items-baseline mb-8 md:mb-12 code-container">
+          <div class="line-numbers pr-4 flex-shrink-0">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <div class="overflow-x-auto">
+            <pre><span class="code-keyword">class</span> <span class="code-class">TechStack</span>:
+  <span class="code-comment"># The tools and technologies I work with</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-baseline mb-8 md:mb-12 code-container">
+        <div class="line-numbers pr-4 flex-shrink-0">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+        </div>
+        <div class="overflow-x-auto">
+          <pre><span class="code-keyword">class</span> <span class="code-class">TechStack</span>:
+  <span class="code-keyword">def</span> <span class="code-method">languages</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [<span class="code-string">"Python"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"HTML5"</span>, <span class="code-string">"CSS3"</span>, <span class="code-string">"SQL"</span>]
+
+  <span class="code-keyword">def</span> <span class="code-method">frameworks</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [<span class="code-string">"Django"</span>, <span class="code-string">"Django REST Framework"</span>]
+
+  <span class="code-keyword">def</span> <span class="code-method">databases</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [<span class="code-string">"PostgreSQL"</span>, <span class="code-string">"MySQL"</span>]
+
+  <span class="code-keyword">def</span> <span class="code-method">tools</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [<span class="code-string">"Git"</span>, <span class="code-string">"GitHub"</span>, <span class="code-string">"Jira"</span>]</pre>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 mt-8 md:mt-12">
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"Python"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/django/django-plain.svg" alt="Django" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"Django"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"JavaScript"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"PostgreSQL"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="Git" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"Git"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"HTML5"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"CSS3"</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-700 rounded-lg p-3 md:p-4 flex flex-col items-center bg-opacity-40 bg-gray-900">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" alt="MySQL" class="h-12 w-12 md:h-16 md:w-16 mb-3 md:mb-4">
+          <div class="text-center">
+            <span class="code-string">"MySQL"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 md:mb-10">
+        <div class="flex items-baseline mb-8 md:mb-12 code-container">
+          <div class="line-numbers pr-4 flex-shrink-0">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <div class="overflow-x-auto">
+            <pre><span class="code-keyword">class</span> <span class="code-class">Portfolio</span>:
+  <span class="code-comment"># A collection of my best work</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-baseline mb-8 md:mb-12 code-container">
+        <div class="line-numbers pr-4 flex-shrink-0">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+        </div>
+        <div class="overflow-x-auto">
+          <pre><span class="code-keyword">class</span> <span class="code-class">Portfolio</span>:
+  <span class="code-keyword">def</span> <span class="code-method">__init__</span>(<span class="code-symbol">self</span>):
+    <span class="code-symbol">self</span>.projects = []
+
+  <span class="code-keyword">def</span> <span class="code-method">featured_projects</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [project <span class="code-keyword">for</span> project <span class="code-keyword">in</span> <span class="code-symbol">self</span>.projects <span class="code-keyword">if</span> project.featured]
+
+  <span class="code-keyword">def</span> <span class="code-method">recent_projects</span>(<span class="code-symbol">self</span>, limit=3):
+    <span class="code-keyword">return</span> sorted(<span class="code-symbol">self</span>.projects, key=<span class="code-keyword">lambda</span> x: x.created_at, reverse=<span class="code-keyword">True</span>)[:limit]</pre>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
+        <!-- Project 1 -->
+        <div class="project-card overflow-hidden">
+          <div class="relative h-40 sm:h-48">
+            <img src="./Projects/wordsmith.png" alt="WordSmith" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::WordSmith</h3>
+            </div>
+          </div>
+          <div class="p-4 md:p-5">
+            <div class="mb-3 md:mb-4 flex flex-wrap">
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+            <p class="text-gray-300 mb-4 text-sm md:text-base">
+              A blog application built with Django that enables users to publish posts and follow other writers in a vibrant community.
+            </p>
+            <div class="flex justify-between mt-4 md:mt-6">
+              <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
+                <i class="fas fa-external-link-alt mr-2"></i> Demo
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+                <i class="fab fa-github mr-2"></i> Source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card overflow-hidden">
+          <div class="relative h-40 sm:h-48">
+            <img src="./Projects/glowcart.png" alt="GlowCart" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::GlowCart</h3>
+            </div>
+          </div>
+          <div class="p-4 md:p-5">
+            <div class="mb-3 md:mb-4 flex flex-wrap">
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">Arduino</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+            <p class="text-gray-300 mb-4 text-sm md:text-base">
+              An e-commerce platform with Arduino integration, sending signals to hardware when products are added to the cart.
+            </p>
+            <div class="flex justify-between mt-4 md:mt-6">
+              <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
+                <i class="fas fa-external-link-alt mr-2"></i> Demo
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+                <i class="fab fa-github mr-2"></i> Source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card overflow-hidden">
+          <div class="relative h-40 sm:h-48">
+            <img src="./Projects/vroom.webp" alt="Vroom Car Rental" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::VroomRental</h3>
+            </div>
+          </div>
+          <div class="p-4 md:p-5">
+            <div class="mb-3 md:mb-4 flex flex-wrap">
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+            <p class="text-gray-300 mb-4 text-sm md:text-base">
+              A car rental platform providing a seamless booking experience with a user-friendly interface.
+            </p>
+            <div class="flex justify-between mt-4 md:mt-6">
+              <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
+                <i class="fas fa-external-link-alt mr-2"></i> Demo
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+                <i class="fab fa-github mr-2"></i> Source
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-8 md:mt-12">
+        <a href="https://github.com/rachitpoudel" target="_blank" class="btn btn-outline">
+          <i class="fab fa-github mr-2"></i> See more on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source Section -->
+  <section id="opensource" class="py-16 md:py-20 bg-gray-900 bg-opacity-30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 md:mb-10">
+        <div class="flex items-baseline mb-8 md:mb-12 code-container">
+          <div class="line-numbers pr-4 flex-shrink-0">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <div class="overflow-x-auto">
+            <pre><span class="code-keyword">class</span> <span class="code-class">OpenSource</span>:
+  <span class="code-comment"># My contributions to the developer community</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-baseline mb-8 md:mb-12 code-container">
+        <div class="line-numbers pr-4 flex-shrink-0">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>10</div>
+          <div>11</div>
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+        </div>
+        <div class="overflow-x-auto">
+          <pre><span class="code-keyword">class</span> <span class="code-class">OpenSource</span>:
+  <span class="code-keyword">def</span> <span class="code-method">contributions</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [
+      {
+        <span class="code-symbol">"name"</span>: <span class="code-string">"Django"</span>,
+        <span class="code-symbol">"description"</span>: <span class="code-string">"The web framework for perfectionists with deadlines."</span>,
+        <span class="code-symbol">"url"</span>: <span class="code-string">"https://github.com/django/django"</span>
+      },
+      {
+        <span class="code-symbol">"name"</span>: <span class="code-string">"Django REST Framework"</span>,
+        <span class="code-symbol">"description"</span>: <span class="code-string">"A powerful and flexible toolkit for building Web APIs."</span>,
+        <span class="code-symbol">"url"</span>: <span class="code-string">"https://github.com/encode/django-rest-framework"</span>
+      },
+      {
+        <span class="code-symbol">"name"</span>: <span class="code-string">"Wagtail"</span>,
+        <span class="code-symbol">"description"</span>: <span class="code-string">"A Django content management system focused on flexibility and user experience."</span>,
+        <span class="code-symbol">"url"</span>: <span class="code-string">"https://github.com/wagtail/wagtail"</span>
+      }
+    ]</pre>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
+        <!-- Open Source 1 -->
+        <div class="project-card p-4 md:p-6">
+          <div class="flex items-center mb-4 md:mb-6">
+            <img src="https://avatars.githubusercontent.com/u/27804?s=200&v=4" alt="Django" class="h-10 w-10 md:h-12 md:w-12 rounded mr-4">
+            <h3 class="text-lg md:text-xl font-semibold python-blue">Django</h3>
+          </div>
+          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
+            The web framework for perfectionists with deadlines. Django makes it easier to build better web apps more quickly and with less code.
+          </p>
+          <div class="mb-4 flex flex-wrap">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Web Development</span>
+          </div>
+          <a href="https://github.com/django/django" target="_blank" class="python-blue hover:text-blue-300 inline-flex items-center transition-colors text-sm md:text-base">
+            <i class="fab fa-github mr-2"></i> View Repository
+          </a>
+        </div>
+
+        <!-- Open Source 2 -->
+        <div class="project-card p-4 md:p-6">
+          <div class="flex items-center mb-4 md:mb-6">
+            <img src="https://avatars.githubusercontent.com/u/6304494?s=200&v=4" alt="Django REST Framework" class="h-10 w-10 md:h-12 md:w-12 rounded mr-4">
+            <h3 class="text-lg md:text-xl font-semibold python-blue">Django REST Framework</h3>
+          </div>
+          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
+            A powerful and flexible toolkit for building Web APIs. DRF makes it easy to build, test, and maintain RESTful APIs.
+          </p>
+          <div class="mb-4 flex flex-wrap">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">REST API</span>
+          </div>
+          <a href="https://github.com/encode/django-rest-framework" target="_blank" class="python-blue hover:text-blue-300 inline-flex items-center transition-colors text-sm md:text-base">
+            <i class="fab fa-github mr-2"></i> View Repository
+          </a>
+        </div>
+
+        <!-- Open Source 3 -->
+        <div class="project-card p-4 md:p-6">
+          <div class="flex items-center mb-4 md:mb-6">
+            <img src="https://avatars.githubusercontent.com/u/22258274?s=200&v=4" alt="Wagtail" class="h-10 w-10 md:h-12 md:w-12 rounded mr-4">
+            <h3 class="text-lg md:text-xl font-semibold python-blue">Wagtail</h3>
+          </div>
+          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
+            A Django content management system focused on flexibility and user experience. Wagtail is perfect for building modern, content-rich websites.
+          </p>
+          <div class="mb-4 flex flex-wrap">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">CMS</span>
+          </div>
+          <a href="https://github.com/wagtail/wagtail" target="_blank" class="python-blue hover:text-blue-300 inline-flex items-center transition-colors text-sm md:text-base">
+            <i class="fab fa-github mr-2"></i> View Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 md:mb-10">
+        <div class="flex items-baseline mb-8 md:mb-12 code-container">
+          <div class="line-numbers pr-4 flex-shrink-0">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+          <div class="overflow-x-auto">
+            <pre><span class="code-keyword">def</span> <span class="code-method">contact_me</span>():
+  <span class="code-comment"># Let's work together</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-baseline mb-8 md:mb-12 code-container">
+        <div class="line-numbers pr-4 flex-shrink-0">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+        </div>
+        <div class="overflow-x-auto">
+          <pre><span class="code-keyword">def</span> <span class="code-method">send_message</span>(<span class="code-symbol">name</span>, <span class="code-symbol">email</span>, <span class="code-symbol">message</span>):
+  <span class="code-keyword">if</span> <span class="code-symbol">name</span> <span class="code-keyword">and</span> <span class="code-symbol">email</span> <span class="code-keyword">and</span> <span class="code-symbol">message</span>:
+    <span class="code-method">send_mail</span>(
+      <span class="code-symbol">subject</span>=<span class="code-string">"New message from portfolio"</span>,
+      <span class="code-symbol">message</span>=<span class="code-symbol">message</span>,
+      <span class="code-symbol">from_email</span>=<span class="code-symbol">email</span>,
+      <span class="code-symbol">recipient_list</span>=[<span class="code-string">"rachitpoudel@gmail.com"</span>],
+    )
+    <span class="code-keyword">return</span> {<span class="code-symbol">"success"</span>: <span class="code-keyword">True</span>, <span class="code-symbol">"message"</span>: <span class="code-string">"Thanks for reaching out! I'll get back to you soon."</span>}
+  <span class="code-keyword">else</span>:
+    <span class="code-keyword">return</span> {<span class="code-symbol">"success"</span>: <span class="code-keyword">False</span>, <span class="code-symbol">"message"</span>: <span class="code-string">"Please fill out all fields."</span>}</pre>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mt-8 md:mt-12">
+        <div class="project-card p-6 md:p-8">
+          <form action="https://formspree.io/f/xnqyrbgp" method="POST" class="contact-form" data-reveal="right" class="space-y-4 md:space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">name</label>
+              <input required type="text" id="name" name="name" class="w-full rounded-md border-gray-700 bg-gray-800 bg-opacity-70 focus:border-python-blue focus:ring-python-blue text-white py-2 md:py-3 px-3 md:px-4">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">email</label>
+              <input required type="email" id="email" name="email" class="w-full rounded-md border-gray-700 bg-gray-800 bg-opacity-70 focus:border-python-blue focus:ring-python-blue text-white py-2 md:py-3 px-3 md:px-4">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">message</label>
+              <textarea required id="message" name="message" rows="4" class="w-full rounded-md border-gray-700 bg-gray-800 bg-opacity-70 focus:border-python-blue focus:ring-python-blue text-white py-2 md:py-3 px-3 md:px-4"></textarea>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary w-full mt-4">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+                send_message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="project-card p-6 md:p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 python-blue">Contact Information</h3>
+            <div class="space-y-4 md:space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 h-9 w-9 md:h-10 md:w-10 rounded-md python-bg flex items-center justify-center">
+                  <svg class="h-4 w-4 md:h-5 md:w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <div class="ml-3 md:ml-4">
+                  <p class="text-gray-200 font-semibold text-sm md:text-base"><span class="code-keyword">def</span> email</p>
+                  <a href="mailto:rachitpoudel@gmail.com" class="text-gray-300 hover:text-white text-sm md:text-base">rachitpoudel@gmail.com</a>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="flex-shrink-0 h-9 w-9 md:h-10 md:w-10 rounded-md python-bg flex items-center justify-center">
+                  <svg class="h-4 w-4 md:h-5 md:w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
+                <div class="ml-3 md:ml-4">
+                  <p class="text-gray-200 font-semibold text-sm md:text-base"><span class="code-keyword">def</span> location</p>
+                  <p class="text-gray-300 text-sm md:text-base">Kathmandu, Nepal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 md:mt-10">
+            <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 python-blue">Connect With Me</h3>
+            <div class="flex space-x-5 md:space-x-6">
+              <a href="https://github.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/rachitpoudel/" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 md:py-10 bg-gray-900 bg-opacity-70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+        </div>
+        <div class="flex space-x-5 md:space-x-6">
+          <a href="https://github.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-github text-lg md:text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/rachitpoudel/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-linkedin-in text-lg md:text-xl"></i>
+          </a>
+          <a href="https://x.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+            <i class="fab fa-twitter text-lg md:text-xl"></i>
+          </a>
+        </div>
+      </div>
+      <div class="mt-4 md:mt-6 border-t border-gray-700 pt-4 md:pt-6 text-center text-gray-400">
+        <pre><span class="code-keyword">print</span>(<span class="code-string">f"© {datetime.now().year} Rachit Poudel. All rights reserved."</span>)</pre>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.querySelector('.python-loader');
+      setTimeout(function() {
+        loader.style.opacity = '0';
+        loader.style.visibility = 'hidden';
+      }, 1000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Active navigation link highlighting based on scroll position
+      const sections = document.querySelectorAll('section');
+      const navLinks = {
+        '#home': document.getElementById('nav-home'),
+        '#about': document.getElementById('nav-about'),
+        '#skills': document.getElementById('nav-skills'),
+        '#projects': document.getElementById('nav-projects'),
+        '#opensource': document.getElementById('nav-opensource'),
+        '#contact': document.getElementById('nav-contact')
+      };
+
+      function setActiveLink() {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            current = '#' + section.getAttribute('id');
+          }
+        });
+
+        Object.keys(navLinks).forEach(id => {
+          if (navLinks[id]) {
+            navLinks[id].classList.remove('active-link');
+            if (id === current) {
+              navLinks[id].classList.add('active-link');
+            }
+          }
+        });
+      }
+
+      window.addEventListener('scroll', setActiveLink);
+      setActiveLink();
+    });
+
+    // Detect scrolling to change navbar appearance
+    function updateNavbarOnScroll() {
+      const navbar = document.querySelector('nav.fixed');
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('navbar-scrolled');
+        } else {
+          navbar.classList.remove('navbar-scrolled');
+        }
+      });
+    }
+
+    // Add this to your DOMContentLoaded event
+    document.addEventListener('DOMContentLoaded', function() {
+      // Existing code...
+
+      // Add the navbar scroll detection
+      updateNavbarOnScroll();
+
+      // Rest of your existing code...
+    });
+  </script>
+</body>
+</html>
