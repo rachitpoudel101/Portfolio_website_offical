@@ -25,13 +25,17 @@
       --class: #74C7EC;
     }
 
-    * {
-      font-family: 'Fira Code', monospace;
-    }
+    /* Add these new background color variables */
+    .theme-1 { background-color: #1E1E2E; }  /* Current dark theme */
+    .theme-2 { background-color: #1A1B26; }  /* Tokyo Night */
+    .theme-3 { background-color: #282C34; }  /* One Dark */
+    .theme-4 { background-color: #2E3440; }  /* Nord */
+    .theme-5 { background-color: #24283B; }  /* Storm */
 
     body {
       background-color: var(--editor-bg);
       color: var(--editor-text);
+      transition: background-color 0.5s ease;
     }
 
     .code-keyword {
@@ -1216,7 +1220,66 @@
 
   <!-- JavaScript -->
   <script>
+    // Add this at the start of your JavaScript code
+    function setRandomTheme() {
+      const themes = ['theme-1', 'theme-2', 'theme-3', 'theme-4', 'theme-5'];
+      const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+      document.body.className = randomTheme;
+    }
+
+    // Add this function to randomize array elements
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Modified function to only update the tech stack list items
+    function randomizeSkillsAndStack() {
+      // Randomize skills grid
+      const skillsContainer = document.querySelector('#skills .grid');
+      const skills = Array.from(skillsContainer.children);
+      const shuffledSkills = shuffleArray([...skills]);
+      
+      skillsContainer.innerHTML = '';
+      shuffledSkills.forEach(skill => {
+        skillsContainer.appendChild(skill);
+      });
+
+      // Find the correct tech stack code block (the second pre element in the skills section)
+      const techStackCode = document.querySelector('#skills .code-container:nth-child(2) pre');
+      if (!techStackCode) return;
+
+      // Get all the string elements within the code block
+      const stringElements = techStackCode.querySelectorAll('.code-string');
+      const strings = Array.from(stringElements).map(el => el.textContent.replace(/"/g, ''));
+
+      // Group strings by their current categories
+      const languages = strings.slice(0, 5);
+      const frameworks = strings.slice(5, 7);
+      const databases = strings.slice(7, 9);
+      const tools = strings.slice(9, 12);
+
+      // Shuffle each category
+      shuffleArray(languages);
+      shuffleArray(frameworks);
+      shuffleArray(databases);
+      shuffleArray(tools);
+
+      // Update the string elements with new shuffled values
+      stringElements.forEach((el, index) => {
+        if (index < 5) el.textContent = `"${languages[index]}"`;
+        else if (index < 7) el.textContent = `"${frameworks[index - 5]}"`;
+        else if (index < 9) el.textContent = `"${databases[index - 7]}"`;
+        else if (index < 12) el.textContent = `"${tools[index - 9]}"`;
+      });
+    }
+
     window.addEventListener('load', function() {
+      setRandomTheme();
+      randomizeSkillsAndStack();
       const loader = document.querySelector('.python-loader');
       setTimeout(function() {
         loader.style.opacity = '0';
