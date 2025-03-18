@@ -746,34 +746,21 @@
             <div>1</div>
             <div>2</div>
             <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
           </div>
           <div class="overflow-x-auto">
             <pre><span class="code-keyword">class</span> <span class="code-class">TechStack</span>:
-  <span class="code-comment"># The tools and technologies I work with</span></pre>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex items-baseline mb-8 md:mb-12 code-container">
-        <div class="line-numbers pr-4 flex-shrink-0">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-          <div>10</div>
-          <div>11</div>
-          <div>12</div>
-          <div>13</div>
-          <div>14</div>
-          <div>15</div>
-        </div>
-        <div class="overflow-x-auto">
-          <pre><span class="code-keyword">class</span> <span class="code-class">TechStack</span>:
   <span class="code-keyword">def</span> <span class="code-method">languages</span>(<span class="code-symbol">self</span>):
     <span class="code-keyword">return</span> [<span class="code-string">"Python"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"HTML5"</span>, <span class="code-string">"CSS3"</span>, <span class="code-string">"SQL"</span>]
 
@@ -785,6 +772,7 @@
 
   <span class="code-keyword">def</span> <span class="code-method">tools</span>(<span class="code-symbol">self</span>):
     <span class="code-keyword">return</span> [<span class="code-string">"Git"</span>, <span class="code-string">"GitHub"</span>, <span class="code-string">"Jira"</span>]</pre>
+          </div>
         </div>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 mt-8 md:mt-12">
@@ -1182,6 +1170,58 @@
 
   <!-- JavaScript -->
   <script>
+    // Shuffle array helper function
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Shuffle function for tech stack cards
+    function shuffleTechStack() {
+      const techStackContainer = document.querySelector('#skills .grid');
+      const techStackCards = Array.from(techStackContainer.children);
+      
+      // Fisher-Yates shuffle algorithm
+      for (let i = techStackCards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        techStackContainer.appendChild(techStackCards[j]);
+      }
+    }
+
+    // Shuffle TechStack class content
+    function shuffleTechStackClass() {
+      const languages = ["Python", "JavaScript", "HTML5", "CSS3", "SQL"];
+      const frameworks = ["Django", "Django REST Framework"];
+      const databases = ["PostgreSQL", "MySQL"];
+      const tools = ["Git", "GitHub", "Jira"];
+
+      // Shuffle each array
+      const shuffledLanguages = shuffleArray([...languages]);
+      const shuffledFrameworks = shuffleArray([...frameworks]);
+      const shuffledDatabases = shuffleArray([...databases]);
+      const shuffledTools = shuffleArray([...tools]);
+
+      // Update the content in the pre tag
+      const techStackPre = document.querySelector('#skills pre');
+      if (techStackPre) {
+        techStackPre.innerHTML = `<span class="code-keyword">class</span> <span class="code-class">TechStack</span>:
+  <span class="code-keyword">def</span> <span class="code-method">languages</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [${shuffledLanguages.map(lang => `<span class="code-string">"${lang}"</span>`).join(', ')}]
+
+  <span class="code-keyword">def</span> <span class="code-method">frameworks</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [${shuffledFrameworks.map(framework => `<span class="code-string">"${framework}"</span>`).join(', ')}]
+
+  <span class="code-keyword">def</span> <span class="code-method">databases</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [${shuffledDatabases.map(db => `<span class="code-string">"${db}"</span>`).join(', ')}]
+
+  <span class="code-keyword">def</span> <span class="code-method">tools</span>(<span class="code-symbol">self</span>):
+    <span class="code-keyword">return</span> [${shuffledTools.map(tool => `<span class="code-string">"${tool}"</span>`).join(', ')}]`;
+      }
+    }
+
     // Enhanced random theme function with session storage
     function setRandomTheme() {
       const themes = ['theme-1', 'theme-2', 'theme-3', 'theme-4', 'theme-5'];
@@ -1207,6 +1247,8 @@
 
     window.addEventListener('load', function() {
       setRandomTheme();
+      shuffleTechStack();
+      shuffleTechStackClass();
       const loader = document.querySelector('.python-loader');
       setTimeout(function() {
         loader.style.opacity = '0';
