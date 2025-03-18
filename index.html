@@ -25,17 +25,52 @@
       --class: #74C7EC;
     }
 
-    /* Add these new background color variables */
-    .theme-1 { background-color: #1E1E2E; }  /* Current dark theme */
-    .theme-2 { background-color: #1A1B26; }  /* Tokyo Night */
-    .theme-3 { background-color: #282C34; }  /* One Dark */
-    .theme-4 { background-color: #2E3440; }  /* Nord */
-    .theme-5 { background-color: #24283B; }  /* Storm */
+    /* Enhanced Python-themed backgrounds with overlays */
+    .theme-1 { 
+      background: linear-gradient(135deg, rgba(55, 118, 171, 0.1) 0%, rgba(55, 118, 171, 0.2) 100%), #1E1E2E;
+    }
+    .theme-2 { 
+      background: linear-gradient(135deg, rgba(255, 212, 59, 0.1) 0%, rgba(55, 118, 171, 0.15) 100%), #1A1B26;
+    }
+    .theme-3 { 
+      background: linear-gradient(135deg, rgba(55, 118, 171, 0.15) 0%, rgba(255, 212, 59, 0.1) 100%), #282C34;
+    }
+    .theme-4 { 
+      background: linear-gradient(135deg, rgba(255, 212, 59, 0.08) 0%, rgba(55, 118, 171, 0.18) 100%), #2E3440;
+    }
+    .theme-5 { 
+      background: linear-gradient(135deg, rgba(55, 118, 171, 0.12) 0%, rgba(255, 212, 59, 0.08) 100%), #24283B;
+    }
 
+    /* Add a subtle animated gradient overlay */
+    .gradient-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: -1;
+      background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(55, 118, 171, 0.05) 50%,
+        transparent 100%
+      );
+      background-size: 200% 200%;
+      animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Update body styles */
     body {
-      background-color: var(--editor-bg);
-      color: var(--editor-text);
-      transition: background-color 0.5s ease;
+      transition: background 1s ease-in-out;
+      position: relative;
     }
 
     .code-keyword {
@@ -398,6 +433,7 @@
 
     .image-float {
       animation: float 6s ease-in-out infinite;
+      transition: all 0.8s ease-in-out;
     }
 
     /* Pulsing glow animation */
@@ -486,7 +522,7 @@
 <body class="min-h-screen">
 
   <div class="python-loader">
-    <img src="./tech_stacks/python.png" alt="Python Loading">
+    <img src="./images/python.jpeg" alt="Python Loading">
   </div>
 
   <!-- Floating Python icons in the background -->
@@ -511,7 +547,6 @@
           <a href="#about" class="hover:python-blue" id="nav-about">About</a>
           <a href="#skills" class="hover:python-blue" id="nav-skills">Skills</a>
           <a href="#projects" class="hover:python-blue" id="nav-projects">Projects</a>
-          <a href="#opensource" class="hover:python-blue" id="nav-opensource">open_source</a>
           <a href="#contact" class="hover:python-blue" id="nav-contact">Contact</a>
           <a href="https://github.com/rachitpoudel101" target="_blank" class="text-gray-400 hover:text-white">
             <i class="fab fa-github text-xl"></i>
@@ -533,7 +568,6 @@
         <a href="#about" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">About</a>
         <a href="#skills" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">Skills</a>
         <a href="#projects" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">Projects</a>
-        <a href="#opensource" class="block px-4 py-3 text-base hover:bg-gray-700 border-b border-gray-700">open_source</a>
         <a href="#contact" class="block px-4 py-3 text-base hover:bg-gray-700">contact</a>
       </div>
     </div>
@@ -859,87 +893,136 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
-        <!-- Project 1 -->
+        <!-- Project 1: Vchat-from-Django -->
         <div class="project-card overflow-hidden">
           <div class="relative h-40 sm:h-48">
-            <img src="./Projects/wordsmith.png" alt="WordSmith" class="w-full h-full object-cover">
+            <img src="./images/proj_2.png" alt="Vchat" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
             <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::WordSmith</h3>
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::Vchat</h3>
             </div>
           </div>
           <div class="p-4 md:p-5">
             <div class="mb-3 md:mb-4 flex flex-wrap">
               <span class="skill-tag">Django</span>
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">WebSocket</span>
+              <span class="skill-tag">SQLite</span>
             </div>
             <p class="text-gray-300 mb-4 text-sm md:text-base">
-              A blog application built with Django that enables users to publish posts and follow other writers in a vibrant community.
+              A real-time video chat application built with Django, featuring WebSocket integration for seamless communication.
             </p>
             <div class="flex justify-between mt-4 md:mt-6">
-              <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
+              <a href="https://vchat-from-djnago.onrender.com/" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
                 <i class="fas fa-external-link-alt mr-2"></i> Demo
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+              <a href="https://github.com/rachitpoudel101/Vchat-from-DJango" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
                 <i class="fab fa-github mr-2"></i> Source
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2: Chat-app-django -->
         <div class="project-card overflow-hidden">
           <div class="relative h-40 sm:h-48">
-            <img src="./Projects/glowcart.png" alt="GlowCart" class="w-full h-full object-cover">
+            <img src="./images/chat.jpeg" alt="Chat App" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
             <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::GlowCart</h3>
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::ChatApp</h3>
             </div>
           </div>
           <div class="p-4 md:p-5">
             <div class="mb-3 md:mb-4 flex flex-wrap">
               <span class="skill-tag">Django</span>
-              <span class="skill-tag">Arduino</span>
-              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Channels</span>
+              <span class="skill-tag">Redis</span>
             </div>
             <p class="text-gray-300 mb-4 text-sm md:text-base">
-              An e-commerce platform with Arduino integration, sending signals to hardware when products are added to the cart.
+              A real-time chat application using Django Channels and WebSocket for instant messaging functionality.
             </p>
             <div class="flex justify-between mt-4 md:mt-6">
-              <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
+              <a href="https://chat-app-django-1.onrender.com/" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
                 <i class="fas fa-external-link-alt mr-2"></i> Demo
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+              <a href="https://github.com/rachitpoudel101/Chat-app-django" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
                 <i class="fab fa-github mr-2"></i> Source
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
+        <!-- Project 3: Voter_List_Django -->
         <div class="project-card overflow-hidden">
           <div class="relative h-40 sm:h-48">
-            <img src="./Projects/vroom.webp" alt="Vroom Car Rental" class="w-full h-full object-cover">
+            <img src="./images/votter.png" alt="Voter List" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
             <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::VroomRental</h3>
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::VoterList</h3>
             </div>
           </div>
           <div class="p-4 md:p-5">
             <div class="mb-3 md:mb-4 flex flex-wrap">
               <span class="skill-tag">Django</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">Bootstrap</span>
             </div>
             <p class="text-gray-300 mb-4 text-sm md:text-base">
-              A car rental platform providing a seamless booking experience with a user-friendly interface.
+              A digital voter management system built with Django, featuring user authentication and voter data management.
             </p>
             <div class="flex justify-between mt-4 md:mt-6">
-              <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center text-sm md:text-base">
-                <i class="fas fa-external-link-alt mr-2"></i> Demo
+              <a href="https://github.com/rachitpoudel101/Voter_List_DJango" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+                <i class="fab fa-github mr-2"></i> Source
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Lugga_COllab -->
+        <div class="project-card overflow-hidden">
+          <div class="relative h-40 sm:h-48">
+            <img src="./images/proj_3.png" alt="Lugga Collab" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::LuggaCollab</h3>
+            </div>
+          </div>
+          <div class="p-4 md:p-5">
+            <div class="mb-3 md:mb-4 flex flex-wrap">
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Bootstrap</span>
+            </div>
+            <p class="text-gray-300 mb-4 text-sm md:text-base">
+              A collaborative e-commerce platform built with PHP, featuring user authentication and product management.
+            </p>
+            <div class="flex justify-between mt-4 md:mt-6">
+              <a href="https://github.com/rachitpoudel101/Lugga_COllab" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
+                <i class="fab fa-github mr-2"></i> Source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Weather App -->
+        <div class="project-card overflow-hidden">
+          <div class="relative h-40 sm:h-48">
+            <img src="./images/proj_1.jpeg" alt="Weather App" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+              <h3 class="text-lg md:text-xl font-semibold"><span class="python-blue">Project</span>::WeatherApp</h3>
+            </div>
+          </div>
+          <div class="p-4 md:p-5">
+            <div class="mb-3 md:mb-4 flex flex-wrap">
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">API</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+            <p class="text-gray-300 mb-4 text-sm md:text-base">
+              A weather forecast application built with Django, integrating with weather APIs for real-time weather data.
+            </p>
+            <div class="flex justify-between mt-4 md:mt-6">
+              <a href="https://github.com/rachitpoudel101/weather_app" class="text-gray-400 hover:text-white transition-colors flex items-center text-sm md:text-base">
                 <i class="fab fa-github mr-2"></i> Source
               </a>
             </div>
@@ -948,130 +1031,9 @@
       </div>
 
       <div class="text-center mt-8 md:mt-12">
-        <a href="https://github.com/rachitpoudel" target="_blank" class="btn btn-outline">
+        <a href="https://github.com/rachitpoudel101" target="_blank" class="btn btn-outline">
           <i class="fab fa-github mr-2"></i> See more on GitHub
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Open Source Section -->
-  <section id="opensource" class="py-16 md:py-20 bg-gray-900 bg-opacity-30">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-8 md:mb-10">
-        <div class="flex items-baseline mb-8 md:mb-12 code-container">
-          <div class="line-numbers pr-4 flex-shrink-0">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-          </div>
-          <div class="overflow-x-auto">
-            <pre><span class="code-keyword">class</span> <span class="code-class">OpenSource</span>:
-  <span class="code-comment"># My contributions to the developer community</span></pre>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex items-baseline mb-8 md:mb-12 code-container">
-        <div class="line-numbers pr-4 flex-shrink-0">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-          <div>10</div>
-          <div>11</div>
-          <div>12</div>
-          <div>13</div>
-          <div>14</div>
-          <div>15</div>
-          <div>16</div>
-          <div>17</div>
-        </div>
-        <div class="overflow-x-auto">
-          <pre><span class="code-keyword">class</span> <span class="code-class">OpenSource</span>:
-  <span class="code-keyword">def</span> <span class="code-method">contributions</span>(<span class="code-symbol">self</span>):
-    <span class="code-keyword">return</span> [
-      {
-        <span class="code-symbol">"name"</span>: <span class="code-string">"Django"</span>,
-        <span class="code-symbol">"description"</span>: <span class="code-string">"The web framework for perfectionists with deadlines."</span>,
-        <span class="code-symbol">"url"</span>: <span class="code-string">"https://github.com/django/django"</span>
-      },
-      {
-        <span class="code-symbol">"name"</span>: <span class="code-string">"Django REST Framework"</span>,
-        <span class="code-symbol">"description"</span>: <span class="code-string">"A powerful and flexible toolkit for building Web APIs."</span>,
-        <span class="code-symbol">"url"</span>: <span class="code-string">"https://github.com/encode/django-rest-framework"</span>
-      },
-      {
-        <span class="code-symbol">"name"</span>: <span class="code-string">"Wagtail"</span>,
-        <span class="code-symbol">"description"</span>: <span class="code-string">"A Django content management system focused on flexibility and user experience."</span>,
-        <span class="code-symbol">"url"</span>: <span class="code-string">"https://github.com/wagtail/wagtail"</span>
-      }
-    ]</pre>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
-        <!-- Open Source 1 -->
-        <div class="project-card p-4 md:p-6">
-          <div class="flex items-center mb-4 md:mb-6">
-            <img src="https://avatars.githubusercontent.com/u/27804?s=200&v=4" alt="Django" class="h-10 w-10 md:h-12 md:w-12 rounded mr-4">
-            <h3 class="text-lg md:text-xl font-semibold python-blue">Django</h3>
-          </div>
-          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-            The web framework for perfectionists with deadlines. Django makes it easier to build better web apps more quickly and with less code.
-          </p>
-          <div class="mb-4 flex flex-wrap">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">Web Development</span>
-          </div>
-          <a href="https://github.com/django/django" target="_blank" class="python-blue hover:text-blue-300 inline-flex items-center transition-colors text-sm md:text-base">
-            <i class="fab fa-github mr-2"></i> View Repository
-          </a>
-        </div>
-
-        <!-- Open Source 2 -->
-        <div class="project-card p-4 md:p-6">
-          <div class="flex items-center mb-4 md:mb-6">
-            <img src="https://avatars.githubusercontent.com/u/6304494?s=200&v=4" alt="Django REST Framework" class="h-10 w-10 md:h-12 md:w-12 rounded mr-4">
-            <h3 class="text-lg md:text-xl font-semibold python-blue">Django REST Framework</h3>
-          </div>
-          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-            A powerful and flexible toolkit for building Web APIs. DRF makes it easy to build, test, and maintain RESTful APIs.
-          </p>
-          <div class="mb-4 flex flex-wrap">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">REST API</span>
-          </div>
-          <a href="https://github.com/encode/django-rest-framework" target="_blank" class="python-blue hover:text-blue-300 inline-flex items-center transition-colors text-sm md:text-base">
-            <i class="fab fa-github mr-2"></i> View Repository
-          </a>
-        </div>
-
-        <!-- Open Source 3 -->
-        <div class="project-card p-4 md:p-6">
-          <div class="flex items-center mb-4 md:mb-6">
-            <img src="https://avatars.githubusercontent.com/u/22258274?s=200&v=4" alt="Wagtail" class="h-10 w-10 md:h-12 md:w-12 rounded mr-4">
-            <h3 class="text-lg md:text-xl font-semibold python-blue">Wagtail</h3>
-          </div>
-          <p class="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
-            A Django content management system focused on flexibility and user experience. Wagtail is perfect for building modern, content-rich websites.
-          </p>
-          <div class="mb-4 flex flex-wrap">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">CMS</span>
-          </div>
-          <a href="https://github.com/wagtail/wagtail" target="_blank" class="python-blue hover:text-blue-300 inline-flex items-center transition-colors text-sm md:text-base">
-            <i class="fab fa-github mr-2"></i> View Repository
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -1112,7 +1074,7 @@
       <span class="code-symbol">subject</span>=<span class="code-string">"New message from portfolio"</span>,
       <span class="code-symbol">message</span>=<span class="code-symbol">message</span>,
       <span class="code-symbol">from_email</span>=<span class="code-symbol">email</span>,
-      <span class="code-symbol">recipient_list</span>=[<span class="code-string">"rachitpoudel@gmail.com"</span>],
+      <span class="code-symbol">recipient_list</span>=[<span class="code-string">"rachit300poudel@gmail.com"</span>],
     )
     <span class="code-keyword">return</span> {<span class="code-symbol">"success"</span>: <span class="code-keyword">True</span>, <span class="code-symbol">"message"</span>: <span class="code-string">"Thanks for reaching out! I'll get back to you soon."</span>}
   <span class="code-keyword">else</span>:
@@ -1158,7 +1120,7 @@
                 </div>
                 <div class="ml-3 md:ml-4">
                   <p class="text-gray-200 font-semibold text-sm md:text-base"><span class="code-keyword">def</span> email</p>
-                  <a href="mailto:rachitpoudel@gmail.com" class="text-gray-300 hover:text-white text-sm md:text-base">rachitpoudel@gmail.com</a>
+                  <a href="mailto:rachit300poudel@gmail.com" class="text-gray-300 hover:text-white text-sm md:text-base">rachit300poudel@gmail.com</a>
                 </div>
               </div>
               <div class="flex items-start">
@@ -1182,10 +1144,10 @@
               <a href="https://github.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://www.linkedin.com/in/rachitpoudel/" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
+              <a href="https://www.linkedin.com/in/rachit-poudel-498a4b2aa/" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://x.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
+              <a href="https://www.threads.net/@rachi_tpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors text-xl md:text-2xl">
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
@@ -1201,13 +1163,13 @@
         <div class="mb-4 md:mb-0">
         </div>
         <div class="flex space-x-5 md:space-x-6">
-          <a href="https://github.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://github.com/rachitpoudel101" target="_blank" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-github text-lg md:text-xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/rachitpoudel/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/rachit-poudel-498a4b2aa/"" target="_blank" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-linkedin-in text-lg md:text-xl"></i>
           </a>
-          <a href="https://x.com/rachitpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.threads.net/@rachi_tpoudel" target="_blank" class="text-gray-400 hover:text-white transition-colors">
             <i class="fab fa-twitter text-lg md:text-xl"></i>
           </a>
         </div>
@@ -1220,66 +1182,31 @@
 
   <!-- JavaScript -->
   <script>
-    // Add this at the start of your JavaScript code
+    // Enhanced random theme function with session storage
     function setRandomTheme() {
       const themes = ['theme-1', 'theme-2', 'theme-3', 'theme-4', 'theme-5'];
-      const randomTheme = themes[Math.floor(Math.random() * themes.length)];
-      document.body.className = randomTheme;
-    }
-
-    // Add this function to randomize array elements
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-
-    // Modified function to only update the tech stack list items
-    function randomizeSkillsAndStack() {
-      // Randomize skills grid
-      const skillsContainer = document.querySelector('#skills .grid');
-      const skills = Array.from(skillsContainer.children);
-      const shuffledSkills = shuffleArray([...skills]);
+      let lastTheme = sessionStorage.getItem('lastTheme');
+      let newTheme;
       
-      skillsContainer.innerHTML = '';
-      shuffledSkills.forEach(skill => {
-        skillsContainer.appendChild(skill);
-      });
-
-      // Find the correct tech stack code block (the second pre element in the skills section)
-      const techStackCode = document.querySelector('#skills .code-container:nth-child(2) pre');
-      if (!techStackCode) return;
-
-      // Get all the string elements within the code block
-      const stringElements = techStackCode.querySelectorAll('.code-string');
-      const strings = Array.from(stringElements).map(el => el.textContent.replace(/"/g, ''));
-
-      // Group strings by their current categories
-      const languages = strings.slice(0, 5);
-      const frameworks = strings.slice(5, 7);
-      const databases = strings.slice(7, 9);
-      const tools = strings.slice(9, 12);
-
-      // Shuffle each category
-      shuffleArray(languages);
-      shuffleArray(frameworks);
-      shuffleArray(databases);
-      shuffleArray(tools);
-
-      // Update the string elements with new shuffled values
-      stringElements.forEach((el, index) => {
-        if (index < 5) el.textContent = `"${languages[index]}"`;
-        else if (index < 7) el.textContent = `"${frameworks[index - 5]}"`;
-        else if (index < 9) el.textContent = `"${databases[index - 7]}"`;
-        else if (index < 12) el.textContent = `"${tools[index - 9]}"`;
-      });
+      do {
+        newTheme = themes[Math.floor(Math.random() * themes.length)];
+      } while (newTheme === lastTheme);
+      
+      // Add a fade effect
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.className = newTheme;
+        document.body.style.opacity = '1';
+      }, 300);
+      
+      sessionStorage.setItem('lastTheme', newTheme);
     }
+
+    // Add smooth transition to body
+    document.body.style.transition = 'opacity 0.3s ease, background 1s ease-in-out';
 
     window.addEventListener('load', function() {
       setRandomTheme();
-      randomizeSkillsAndStack();
       const loader = document.querySelector('.python-loader');
       setTimeout(function() {
         loader.style.opacity = '0';
@@ -1329,7 +1256,6 @@
         '#about': document.getElementById('nav-about'),
         '#skills': document.getElementById('nav-skills'),
         '#projects': document.getElementById('nav-projects'),
-        '#opensource': document.getElementById('nav-opensource'),
         '#contact': document.getElementById('nav-contact')
       };
 
