@@ -27,10 +27,10 @@
 
     /* Enhanced Python-themed backgrounds with overlays */
     .theme-1 { 
-      background: linear-gradient(135deg, rgba(55, 118, 171, 0.1) 0%, rgba(55, 118, 171, 0.2) 100%), #1E1E2E;
+      background: linear-gradient(135deg, rgba(0, 140, 255, 0.1) 0%, rgba(55, 118, 171, 0.2) 100%), #1E1E2E;
     }
     .theme-2 { 
-      background: linear-gradient(135deg, rgba(255, 212, 59, 0.1) 0%, rgba(55, 118, 171, 0.15) 100%), #1A1B26;
+      background: linear-gradient(135deg, rgba(211, 167, 6, 0.18) 0%, rgba(55, 118, 171, 0.15) 100%), #1A1B26;
     }
     .theme-3 { 
       background: linear-gradient(135deg, rgba(55, 118, 171, 0.15) 0%, rgba(255, 212, 59, 0.1) 100%), #282C34;
@@ -167,18 +167,79 @@
       #mobile-menu {
         background-color: var(--editor-bg);
         border: 1px solid rgba(127, 132, 156, 0.3);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
 
       /* Improve mobile menu items */
       #mobile-menu a {
         padding: 0.75rem 1rem;
-        border-bottom: 1px solid rgba(127, 132, 156, 0.1);
+        border-bottom: 1px solid rgba(8, 255, 37, 0.1);
       }
 
       #mobile-menu a:last-child {
         border-bottom: none;
       }
+    }
+
+    /* Add glowing name animation */
+    @keyframes nameGlow {
+      0%, 100% { text-shadow: 0 0 8px rgba(255, 200, 0, 0.3); }
+      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
+    }
+
+    @keyframes roleGlow {
+      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
+      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
+    }
+
+    @keyframes locationGlow {
+      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
+      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
+    }
+
+    @keyframes skillsGlow {
+      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
+      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
+    }
+
+    @keyframes experienceGlow {
+      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
+      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
+    }
+
+    @keyframes passionGlow {
+      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
+      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
+    }
+
+    .name-glow {
+      animation: nameGlow 2s ease-in-out infinite;
+      color: #FFD43B !important;
+    }
+
+    .role-glow {
+      animation: roleGlow 2s ease-in-out infinite;
+      color: #FFD43B !important;
+    }
+
+    .location-glow {
+      animation: locationGlow 2s ease-in-out infinite;
+      color: #FFD43B !important;
+    }
+
+    .skills-glow {
+      animation: skillsGlow 2s ease-in-out infinite;
+      color: #FFD43B !important;
+    }
+
+    .experience-glow {
+      animation: experienceGlow 2s ease-in-out infinite;
+      color: #FFD43B !important;
+    }
+
+    .passion-glow {
+      animation: passionGlow 2s ease-in-out infinite;
+      color: #FFD43B !important;
     }
 
     .cursor {
@@ -624,12 +685,12 @@
               <pre><span class="code-keyword">class</span> <span class="code-class">Developer</span>:
   <span class="code-comment"># About me</span>
   <span class="code-keyword">def</span> <span class="code-method">__init__</span>(<span class="code-symbol">self</span>):
-    <span class="code-symbol">self</span>.name = <span class="code-string">"Rachit Poudel"</span>
-    <span class="code-symbol">self</span>.role = <span class="code-string">"Full-Stack Django Developer"</span>
-    <span class="code-symbol">self</span>.location = <span class="code-string">"Kathmandu, Nepal"</span>
-    <span class="code-symbol">self</span>.skills = [<span class="code-string">"Python"</span>, <span class="code-string">"Django"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"PHP"</span>, <span class="code-string">"PostgreSQL"</span>]
-    <span class="code-symbol">self</span>.experience = <span class="code-string">"2+ years"</span>
-    <span class="code-symbol">self</span>.passion = <span class="code-string">"Building elegant web applications"</span>
+    <span class="code-symbol">self.name</span> = <span class="code-string name-glow">"Rachit Poudel"</span>
+    <span class="code-symbol">selfrole</span>. = <span class="code-string role-glow">"Full-Stack Django Developer"</span>
+    <span class="code-symbol">self.location</span> = <span class="code-string location-glow">"Kathmandu, Nepal"</span>
+    <span class="code-symbol">self.skills</span> = [<span class="code-string skills-glow">"Python"</span>, <span class="code-string skills-glow">"Django"</span>, <span class="code-string skills-glow">"JavaScript"</span>, <span class="code-string skills-glow">"PHP"</span>, <span class="code-string skills-glow">"PostgreSQL"</span>]
+    <span class="code-symbol">self.experience</span> = <span class="code-string experience-glow">"2+ years"</span>
+    <span class="code-symbol">self.passion</span> = <span class="code-string passion-glow">"Building elegant web applications"</span>
 
   <span class="code-keyword">def</span> <span class="code-method">contact</span>(<span class="code-symbol">self</span>):
     <span class="code-keyword">return</span> {
@@ -646,7 +707,7 @@
               </svg>
               View Projects
             </a>
-            <a href="mailto:rachit300poudel@gmail.com" class="btn btn-outline w-full sm:w-auto flex justify-center">
+            <a href="mailto:rachitpoudel@gmail.com" class="btn btn-outline w-full sm:w-auto flex justify-center">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
