@@ -654,10 +654,35 @@
       transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
     }
 
+    .python-loader video,
     .python-loader img {
       width: 100px;
       height: 100px;
       animation: pulse-python 2s infinite;
+      border-radius: 10px;
+    }
+
+    .python-loader video {
+      object-fit: cover;
+    }
+
+    .loader-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--editor-text);
+    }
+
+    .python-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: pulse-python 2s infinite;
+    }
+
+    .loader-fallback p {
+      font-size: 1.2rem;
+      margin: 0;
+      color: var(--python-blue);
     }
 
     @keyframes pulse-python {
@@ -1126,6 +1151,220 @@
     }
 
     /* Touch device optimizations */
+    /* Enhanced Responsive Design - Complete Mobile Optimization */
+    
+    /* Extra small devices (phones in portrait, less than 576px) */
+    @media (max-width: 575px) {
+      html {
+        font-size: 14px;
+      }
+      
+      .max-w-6xl {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+      
+      /* Hero section mobile */
+      #home {
+        padding-top: 4rem !important;
+        padding-bottom: 2rem !important;
+      }
+      
+      /* Mobile image adjustment */
+      .md\\:hidden.w-full.flex.justify-center.mb-8 {
+        margin-bottom: 1rem;
+      }
+      
+      .relative.image-float div[style*="width: 220px"] {
+        width: 160px !important;
+        height: 160px !important;
+      }
+      
+      /* Code container very small screens */
+      .code-container {
+        font-size: 0.7rem !important;
+        padding: 0.5rem !important;
+        margin: 0.5rem 0 !important;
+        border-radius: 0.5rem;
+      }
+      
+      .line-numbers {
+        font-size: 0.6rem !important;
+        padding-right: 0.4rem !important;
+        min-width: 1.2rem !important;
+      }
+      
+      /* Buttons very small screens */
+      .btn {
+        padding: 0.6rem 1rem !important;
+        font-size: 0.8rem !important;
+        min-height: 42px;
+      }
+      
+      /* Typography very small */
+      h1, .text-4xl, .text-5xl {
+        font-size: 1.5rem !important;
+        line-height: 1.2;
+      }
+      
+      h2, .text-3xl {
+        font-size: 1.25rem !important;
+      }
+      
+      h3, .text-2xl {
+        font-size: 1.125rem !important;
+      }
+      
+      /* Project cards very small */
+      .project-card h3 {
+        font-size: 1rem !important;
+      }
+      
+      .project-card p {
+        font-size: 0.8rem !important;
+      }
+      
+      /* Skill tags very small */
+      .skill-tag {
+        font-size: 0.65rem !important;
+        padding: 0.2rem 0.5rem !important;
+        margin: 0.15rem !important;
+      }
+      
+      /* Navigation very small */
+      nav.fixed {
+        padding: 0.5rem 0.75rem !important;
+      }
+      
+      nav a[href="#home"] .text-xl {
+        font-size: 0.9rem !important;
+      }
+      
+      /* Sections padding very small */
+      section {
+        padding: 1.5rem 0 !important;
+      }
+      
+      .py-16, .py-20 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      
+      /* Grid single column */
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .sm\\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) and (max-width: 767px) {
+      .code-container {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+      }
+      
+      .line-numbers {
+        font-size: 0.7rem;
+        padding-right: 0.6rem;
+        min-width: 1.5rem;
+      }
+      
+      .relative.image-float div[style*="width: 220px"] {
+        width: 180px !important;
+        height: 180px !important;
+      }
+      
+      /* Better button spacing */
+      .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+      }
+    }
+    
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .max-w-6xl {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      
+      /* Two column layout for projects */
+      .grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      
+      /* Skills grid for tablets */
+      .grid.grid-cols-2.sm\\:grid-cols-3.md\\:grid-cols-4.lg\\:grid-cols-6.gap-4.md\\:gap-6 {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      
+      .code-container {
+        font-size: 0.9rem;
+        padding: 1rem;
+      }
+      
+      .line-numbers {
+        font-size: 0.8rem;
+        padding-right: 0.75rem;
+      }
+    }
+    
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .max-w-6xl {
+        max-width: 960px;
+      }
+      
+      /* Three column layout */
+      .grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      
+      .code-container {
+        font-size: 1rem;
+      }
+    }
+    
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+      .max-w-6xl {
+        max-width: 1140px;
+      }
+      
+      /* Full layout for large screens */
+      .grid.grid-cols-2.sm\\:grid-cols-3.md\\:grid-cols-4.lg\\:grid-cols-6.gap-4.md\\:gap-6 {
+        grid-template-columns: repeat(6, 1fr) !important;
+      }
+    }
+    
+    /* Landscape orientation optimizations */
+    @media screen and (orientation: landscape) and (max-height: 600px) {
+      #home {
+        min-height: auto !important;
+        padding-top: 3rem !important;
+        padding-bottom: 1rem !important;
+      }
+      
+      section {
+        padding: 1.5rem 0 !important;
+      }
+      
+      .py-16, .py-20 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+      }
+      
+      .relative.image-float div[style*="width: 220px"] {
+        width: 140px !important;
+        height: 140px !important;
+      }
+    }
+    
+    /* Touch device optimizations */
     @media (hover: none) and (pointer: coarse) {
       /* Remove hover effects on touch devices */
       .project-card:hover {
@@ -1166,6 +1405,15 @@
       }
     }
 
+    /* Simple transition styles */
+    #code-section {
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    #action-buttons {
+      transition: opacity 0.6s ease-in-out;
+    }
+
     /* Landscape mobile orientation */
     @media screen and (max-height: 500px) and (orientation: landscape) {
       #home {
@@ -1193,7 +1441,13 @@
 <body class="min-h-screen">
 
   <div class="python-loader">
-    <img src="./images/python.jpeg" alt="Python Loading">
+    <video src="./images/Python.mp4" autoplay loop muted playsinline>
+      <!-- Fallback content if video doesn't load -->
+      <div class="loader-fallback">
+        <div class="python-icon">🐍</div>
+        <p>Loading...</p>
+      </div>
+    </video>
   </div>
 
   <!-- Floating Python icons in the background -->
@@ -1276,7 +1530,8 @@
 
         <!-- Code section - takes full width on mobile, 3/5 width on desktop -->
         <div class="w-full md:w-3/5 space-y-6">
-          <div class="flex items-baseline code-container">
+          <!-- Code Container (shows directly) -->
+          <div id="code-section" class="flex items-baseline code-container">
             <div class="line-numbers pr-4 flex-shrink-0">
               <div>1</div>
               <div>2</div>
@@ -1298,14 +1553,13 @@
               <div>18</div>
             </div>
             <div class="overflow-x-auto">
-              <pre><span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+              <pre id="typing-code"><span class="code-keyword">class</span> <span class="code-class">Developer</span>:
   <span class="code-comment"># About me</span>
   <span class="code-keyword">def</span> <span class="code-method">__init__</span>(<span class="code-symbol">self</span>):
     <span class="code-symbol">self.name</span> = <span class="code-string name-glow">"Rachit Poudel"</span>
     <span class="code-symbol">self.role</span> = <span class="code-string role-glow">"Full-Stack Django Developer"</span>
     <span class="code-symbol">self.location</span> = <span class="code-string location-glow">"Kathmandu, Nepal"</span>
     <span class="code-symbol">self.skills</span> = [<span class="code-string skills-glow">"Python"</span>, <span class="code-string skills-glow">"Django"</span>, <span class="code-string skills-glow">"JavaScript"</span>, <span class="code-string skills-glow">"PHP"</span>, <span class="code-string skills-glow">"PostgreSQL"</span>]
-    <span class="code-symbol">self.experience</span> = <span class="code-string experience-glow">"2+ years"</span>
     <span class="code-symbol">self.passion</span> = <span class="code-string passion-glow">"Building elegant web applications"</span>
 
   <span class="code-keyword">def</span> <span class="code-method">contact</span>(<span class="code-symbol">self</span>):
@@ -1316,7 +1570,8 @@
             </div>
           </div>
 
-          <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-8">
+          <!-- Buttons (show directly) -->
+          <div id="action-buttons" class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-8">
             <a href="#projects" class="btn btn-primary w-full sm:w-auto flex justify-center">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -1394,8 +1649,8 @@
             <div class="overflow-x-auto">
               <pre><span class="code-keyword">class</span> <span class="code-class">AboutMe</span>:
   <span class="code-keyword">def</span> <span class="code-method">bio</span>(<span class="code-symbol">self</span>):
-    <span class="code-keyword">return</span> <span class="code-string">"""I'm a 20-year-old full-stack developer with over 2 years
-    of hands-on experience in Django. My passion lies in
+    <span class="code-keyword">return</span> <span class="code-string">"""I'm a 22-year-old full-stack developer with over 2 year 
+    of self Learning experience in Django. My passion lies in
     creating dynamic web applications that combine elegant code
     with exceptional user experiences."""</span>
 
@@ -1880,6 +2135,8 @@
 
   <!-- JavaScript -->
   <script>
+    // No intro animation needed - everything shows directly
+
     // Shuffle array helper function
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -1963,7 +2220,8 @@
       setTimeout(function() {
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
-      }, 1000);
+        // No intro animation - everything shows directly
+      }, 400);
     });
 
     document.addEventListener('DOMContentLoaded', function() {
