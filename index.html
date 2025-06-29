@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <link rel="icon" href="./tech_stacks/python.png" type="image/png">
   <link rel="apple-touch-icon" href="./tech_stacks/python.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1E1E2E">
   <title>Rachit Poudel | Django Developer</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -440,8 +442,8 @@
       }
 
       nav.fixed.bg-opacity-90,
-      nav.fixed.md\:bg-opacity-90 {
-        background-opacity: 1 !important;
+      nav.fixed.md\\:bg-opacity-90 {
+        background: rgba(30, 30, 46, 0.98) !important;
       }
 
       /* Make mobile menu more visible */
@@ -684,814 +686,507 @@
       background: linear-gradient(90deg, transparent, var(--python-blue), transparent);
     }
 
-    .skill-tag {
-      display: inline-block;
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background-color: rgba(55, 118, 171, 0.1);
-      color: var(--python-blue);
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
-      border: 1px solid rgba(55, 118, 171, 0.2);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      transition: all 0.25s ease;
-      letter-spacing: 0.01em;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .skill-tag::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
-      transition: left 0.5s ease;
-    }
-    
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      background-color: rgba(55, 118, 171, 0.25);
-      border: 1px solid rgba(55, 118, 171, 0.4);
-    }
-    
-    .skill-tag:hover::after {
-      left: 100%;
-    }
-    
-    /* Enhanced code container */
-    .code-container {
-      position: relative;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      background: rgba(30, 30, 46, 0.7);
-      border-radius: 0.75rem;
-      border: 1px solid rgba(55, 118, 171, 0.25);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
-    
-    .code-container:hover {
-      border-color: rgba(55, 118, 171, 0.4);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Code typing animation */
-    @keyframes type {
-      from {width: 0}
-      to {width: 100%}
-    }
-    
-    .typing-animation {
-      overflow: hidden;
-      white-space: nowrap;
-      animation: type 3.5s steps(40, end);
-    }
-    
-    /* Improved form fields */
-    input, textarea {
-      background-color: rgba(30, 30, 46, 0.7) !important;
-      border: 1px solid rgba(127, 132, 156, 0.4) !important;
-      color: var(--editor-text) !important;
-      border-radius: 0.75rem !important;
-      transition: all 0.3s ease !important;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
-    }
-    
-    input:focus, textarea:focus {
-      border-color: var(--python-blue) !important;
-      box-shadow: 0 0 0 3px rgba(55, 118, 171, 0.25) !important;
-      outline: none !important;
-      transform: translateY(-1px);
-    }
-    
-    /* Add scroll reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-    
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Improved name glow effects */
-    .name-glow, .role-glow, .location-glow, .skills-glow, .experience-glow, .passion-glow {
-      text-shadow: 0 0 10px rgba(255, 212, 59, 0.5), 0 0 20px rgba(255, 212, 59, 0.3);
-      color: #FFD43B !important;
-      font-weight: 600;
-    }
-
-    /* Update body styles */
-    body {
-      transition: background 1s ease-in-out;
-      position: relative;
-    }
-
-    .python-blue {
-      color: var(--python-blue);
-    }
-
-    .python-bg {
-      background-color: var(--python-blue);
-    }
-
-    .active-link {
-      color: var(--python-blue);
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #21252b;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #3e4451;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #4b5363;
-    }
-
-    /* Add this to your CSS styles to fix the transparent navigation on mobile */
+    /* Comprehensive Mobile Responsive Fixes */
     @media (max-width: 768px) {
+      /* Force proper mobile layout */
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Fix body and html for mobile */
+      html {
+        font-size: 14px;
+      }
+
+      body {
+        overflow-x: hidden;
+        -webkit-text-size-adjust: none;
+      }
+
+      /* Navigation fixes */
       nav.fixed {
         background-color: var(--editor-bg) !important;
         border-bottom: 1px solid rgba(127, 132, 156, 0.3);
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         transition: all 0.3s ease;
-      }
-
-      .navbar-scrolled {
-        background-color: rgba(30, 30, 46, 0.98) !important;
-        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-      }
-
-      nav.fixed.bg-opacity-90,
-      nav.fixed.md\:bg-opacity-90 {
-        background-opacity: 1 !important;
-      }
-
-      /* Make mobile menu more visible */
-      #mobile-menu {
-        background-color: var(--editor-bg);
-        border: 1px solid rgba(127, 132, 156, 0.3);
-        box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      }
-
-      /* Improve mobile menu items */
-      #mobile-menu a {
         padding: 0.75rem 1rem;
-        border-bottom: 1px solid rgba(8, 255, 37, 0.1);
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
       }
 
-      #mobile-menu a:last-child {
-        border-bottom: none;
-      }
-    }
-
-    /* Add glowing name animation */
-    @keyframes nameGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 200, 0, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes roleGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes locationGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes skillsGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes experienceGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes passionGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    .name-glow {
-      animation: nameGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .role-glow {
-      animation: roleGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .location-glow {
-      animation: locationGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .skills-glow {
-      animation: skillsGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .experience-glow {
-      animation: experienceGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .passion-glow {
-      animation: passionGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.2em;
-      background-color: var(--function);
-      animation: blink 1s step-end infinite;
-      vertical-align: text-bottom;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      from, to {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .python-icon-bg {
-      position: fixed;
-      bottom: -120px;
-      right: -120px;
-      width: 500px;
-      height: 500px;
-      background-image: url('./tech_stacks/python.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.03;
-      z-index: -1;
-      transform: rotate(-15deg);
-    }
-
-    .python-icon-float {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-image: url('./tech_stacks/python.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.1;
-      z-index: -1;
-      animation: float-python 20s ease-in-out infinite;
-    }
-
-    .python-icon-float.one {
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .python-icon-float.two {
-      top: 60%;
-      left: 15%;
-      width: 60px;
-      height: 60px;
-      animation-delay: -5s;
-    }
-
-    .python-icon-float.three {
-      top: 30%;
-      right: 15%;
-      width: 80px;
-      height: 80px;
-      animation-delay: -10s;
-    }
-
-    .python-icon-float.four {
-      bottom: 15%;
-      right: 10%;
-      width: 70px;
-      height: 70px;
-      animation-delay: -15s;
-    }
-
-    @keyframes float-python {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
-      }
-      25% {
-        transform: translateY(-20px) rotate(5deg);
-      }
-      50% {
-        transform: translateY(0) rotate(0deg);
-      }
-      75% {
-        transform: translateY(20px) rotate(-5deg);
-      }
-    }
-
-    .section-header {
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-header:before {
-      content: '';
-      position: absolute;
-      left: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      background-image: url('./tech_stacks/python.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    /* Enhanced section transitions */
-    section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Python loading animation for page load */
-    .python-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--editor-bg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-    }
-
-    .python-loader img {
-      width: 100px;
-      height: 100px;
-      animation: pulse-python 2s infinite;
-    }
-
-    @keyframes pulse-python {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.7;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(0.8);
-        opacity: 0.7;
-      }
-    }
-
-    /* Python accent for navbar */
-    nav.fixed:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--python-blue), transparent);
-    }
-
-    .skill-tag {
-      display: inline-block;
-      padding: 0.35rem 0.85rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background-color: rgba(55, 118, 171, 0.1);
-      color: var(--python-blue);
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
-      border: 1px solid rgba(55, 118, 171, 0.2);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      transition: all 0.25s ease;
-      letter-spacing: 0.01em;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .skill-tag::after {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
-      transition: left 0.5s ease;
-    }
-    
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      background-color: rgba(55, 118, 171, 0.25);
-      border: 1px solid rgba(55, 118, 171, 0.4);
-    }
-    
-    .skill-tag:hover::after {
-      left: 100%;
-    }
-    
-    /* Enhanced code container */
-    .code-container {
-      position: relative;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      background: rgba(30, 30, 46, 0.7);
-      border-radius: 0.75rem;
-      border: 1px solid rgba(55, 118, 171, 0.25);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
-    
-    .code-container:hover {
-      border-color: rgba(55, 118, 171, 0.4);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Code typing animation */
-    @keyframes type {
-      from {width: 0}
-      to {width: 100%}
-    }
-    
-    .typing-animation {
-      overflow: hidden;
-      white-space: nowrap;
-      animation: type 3.5s steps(40, end);
-    }
-    
-    /* Improved form fields */
-    input, textarea {
-      background-color: rgba(30, 30, 46, 0.7) !important;
-      border: 1px solid rgba(127, 132, 156, 0.4) !important;
-      color: var(--editor-text) !important;
-      border-radius: 0.75rem !important;
-      transition: all 0.3s ease !important;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
-    }
-    
-    input:focus, textarea:focus {
-      border-color: var(--python-blue) !important;
-      box-shadow: 0 0 0 3px rgba(55, 118, 171, 0.25) !important;
-      outline: none !important;
-      transform: translateY(-1px);
-    }
-    
-    /* Add scroll reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-    
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Improved name glow effects */
-    .name-glow, .role-glow, .location-glow, .skills-glow, .experience-glow, .passion-glow {
-      text-shadow: 0 0 10px rgba(255, 212, 59, 0.5), 0 0 20px rgba(255, 212, 59, 0.3);
-      color: #FFD43B !important;
-      font-weight: 600;
-    }
-
-    /* Update body styles */
-    body {
-      transition: background 1s ease-in-out;
-      position: relative;
-    }
-
-    .python-blue {
-      color: var(--python-blue);
-    }
-
-    .python-bg {
-      background-color: var(--python-blue);
-    }
-
-    .active-link {
-      color: var(--python-blue);
-    }
-
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #21252b;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #3e4451;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #4b5363;
-    }
-
-    /* Add this to your CSS styles to fix the transparent navigation on mobile */
-    @media (max-width: 768px) {
-      nav.fixed {
+      /* Mobile menu improvements */
+      #mobile-menu {
         background-color: var(--editor-bg) !important;
-        border-bottom: 1px solid rgba(127, 132, 156, 0.3);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        transition: all 0.3s ease;
-      }
-
-      .navbar-scrolled {
-        background-color: rgba(30, 30, 46, 0.98) !important;
-        box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
-      }
-
-      nav.fixed.bg-opacity-90,
-      nav.fixed.md\:bg-opacity-90 {
-        background-opacity: 1 !important;
-      }
-
-      /* Make mobile menu more visible */
-      #mobile-menu {
-        background-color: var(--editor-bg);
         border: 1px solid rgba(127, 132, 156, 0.3);
-        box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        margin: 0.5rem;
+        border-radius: 0.75rem;
+        backdrop-filter: blur(10px);
       }
 
-      /* Improve mobile menu items */
       #mobile-menu a {
+        padding: 1rem 1.25rem;
+        border-bottom: 1px solid rgba(127, 132, 156, 0.1);
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        display: block;
+        color: var(--editor-text);
+      }
+
+      #mobile-menu a:hover, #mobile-menu a:active {
+        background-color: rgba(55, 118, 171, 0.1);
+        color: var(--python-blue);
+      }
+
+      /* Hero section mobile fixes */
+      #home {
+        padding-top: 6rem !important;
+        padding-bottom: 2rem;
+        min-height: 100vh;
+      }
+
+      /* Mobile flexbox fixes */
+      .flex.flex-col.md\\:flex-row {
+        flex-direction: column !important;
+        gap: 2rem;
+      }
+
+      /* Typography scaling for mobile */
+      h1, .text-4xl, .text-5xl {
+        font-size: 1.875rem !important;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      h2, .text-3xl {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+        text-align: center;
+      }
+
+      h3, .text-2xl {
+        font-size: 1.25rem !important;
+        line-height: 1.4;
+      }
+
+      .text-xl {
+        font-size: 1.125rem !important;
+      }
+
+      .text-lg {
+        font-size: 1rem !important;
+      }
+
+      /* Code container mobile optimization */
+      .code-container {
+        margin: 1rem 0;
+        padding: 0.75rem;
+        font-size: 0.75rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 0.5rem;
+      }
+
+      .line-numbers {
+        padding-right: 0.5rem;
+        font-size: 0.625rem;
+        min-width: 1.5rem;
+      }
+
+      .line-numbers div {
+        line-height: 1.4;
+      }
+
+      /* Profile image mobile optimization */
+      .md\\:hidden.w-full.flex.justify-center.mb-8 {
+        margin-bottom: 1.5rem;
+      }
+
+      .relative.image-float div[style*="width: 220px"] {
+        width: 180px !important;
+        height: 180px !important;
+        margin: 0 auto;
+      }
+
+      /* Project cards mobile layout */
+      .project-card {
+        margin-bottom: 1.5rem;
+        border-radius: 0.75rem;
+        overflow: hidden;
+      }
+
+      .project-card .relative {
+        height: 180px !important;
+      }
+
+      .project-card h3 {
+        font-size: 1.125rem;
+        line-height: 1.3;
+      }
+
+      .project-card p {
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      /* Skills grid mobile layout */
+      .grid.grid-cols-2.sm\\:grid-cols-3.md\\:grid-cols-4.lg\\:grid-cols-6.gap-4.md\\:gap-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem;
+      }
+
+      /* Skill tags mobile optimization */
+      .skill-tag {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+        margin-right: 0.375rem;
+        margin-bottom: 0.375rem;
+        text-align: center;
+      }
+
+      /* Button improvements for mobile */
+      .btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.875rem;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.75rem;
+        min-height: 44px;
+      }
+
+      /* Form elements mobile optimization */
+      input, textarea {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+        padding: 1rem !important;
+        border-radius: 0.5rem !important;
+      }
+
+      /* Section padding adjustment */
+      section {
+        padding: 2rem 0;
+      }
+
+      .py-16, .py-20 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+
+      /* Container padding */
+      .max-w-6xl {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      .px-4, .px-6, .px-8 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+
+      /* Grid layout fixes */
+      .grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+      }
+
+      .grid.grid-cols-1.md\\:grid-cols-2.gap-6 {
+        gap: 1rem;
+      }
+
+      /* Spacing fixes */
+      .space-y-6 > * + * {
+        margin-top: 1.5rem;
+      }
+
+      .space-y-8 > * + * {
+        margin-top: 2rem;
+      }
+
+      .gap-10, .gap-16 {
+        gap: 1.5rem !important;
+      }
+
+      /* Hide desktop-only elements on mobile */
+      .python-icon-float {
+        display: none !important;
+      }
+
+      .particles {
+        display: none !important;
+      }
+
+      /* Improve text readability */
+      .text-gray-300, .text-gray-400 {
+        color: #e2e8f0 !important;
+      }
+
+      /* Touch improvements */
+      a, button {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Reduce hover effects for mobile */
+      .project-card:hover {
+        transform: translateY(-2px);
+        transition: transform 0.2s ease;
+      }
+
+      /* Mobile navigation brand size */
+      nav a[href="#home"] .text-xl {
+        font-size: 1rem;
+      }
+
+      /* Better mobile image handling */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Fix overflow issues */
+      .overflow-x-auto {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      /* Contact section mobile */
+      .space-y-6 {
+        gap: 1rem;
+      }
+
+      /* Footer mobile */
+      footer {
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      /* Prevent horizontal scroll */
+      .w-full {
+        max-width: 100%;
+      }
+    }
+
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+      html {
+        font-size: 12px;
+      }
+
+      h1, .text-4xl, .text-5xl {
+        font-size: 1.5rem !important;
+      }
+
+      h2, .text-3xl {
+        font-size: 1.25rem !important;
+      }
+
+      .code-container {
+        font-size: 0.625rem;
+        padding: 0.5rem;
+      }
+
+      .line-numbers {
+        font-size: 0.5rem;
+        min-width: 1rem;
+      }
+
+      .btn {
         padding: 0.75rem 1rem;
-        border-bottom: 1px solid rgba(8, 255, 37, 0.1);
+        font-size: 0.75rem;
       }
 
-      #mobile-menu a:last-child {
-        border-bottom: none;
+      .skill-tag {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.5rem;
       }
-    }
 
-    /* Add glowing name animation */
-    @keyframes nameGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 200, 0, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes roleGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes locationGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes skillsGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes experienceGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    @keyframes passionGlow {
-      0%, 100% { text-shadow: 0 0 8px rgba(255, 212, 59, 0.3); }
-      50% { text-shadow: 0 0 15px rgba(255, 212, 59, 0.5); }
-    }
-
-    .name-glow {
-      animation: nameGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .role-glow {
-      animation: roleGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .location-glow {
-      animation: locationGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .skills-glow {
-      animation: skillsGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .experience-glow {
-      animation: experienceGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .passion-glow {
-      animation: passionGlow 2s ease-in-out infinite;
-      color: #FFD43B !important;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1.2em;
-      background-color: var(--function);
-      animation: blink 1s step-end infinite;
-      vertical-align: text-bottom;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      from, to {
-        opacity: 1;
+      .relative.image-float div[style*="width: 220px"] {
+        width: 150px !important;
+        height: 150px !important;
       }
-      50% {
-        opacity: 0;
+
+      nav.fixed {
+        padding: 0.5rem 0.75rem;
+      }
+
+      /* Single column for very small screens */
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+
+      .project-card .relative {
+        height: 150px !important;
       }
     }
 
-    .python-icon-bg {
-      position: fixed;
-      bottom: -120px;
-      right: -120px;
-      width: 500px;
-      height: 500px;
-      background-image: url('./tech_stacks/python.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.03;
-      z-index: -1;
-      transform: rotate(-15deg);
-    }
-
-    .python-icon-float {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-image: url('./tech_stacks/python.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.1;
-      z-index: -1;
-      animation: float-python 20s ease-in-out infinite;
-    }
-
-    .python-icon-float.one {
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .python-icon-float.two {
-      top: 60%;
-      left: 15%;
-      width: 60px;
-      height: 60px;
-      animation-delay: -5s;
-    }
-
-    .python-icon-float.three {
-      top: 30%;
-      right: 15%;
-      width: 80px;
-      height: 80px;
-      animation-delay: -10s;
-    }
-
-    .python-icon-float.four {
-      bottom: 15%;
-      right: 10%;
-      width: 70px;
-      height: 70px;
-      animation-delay: -15s;
-    }
-
-    @keyframes float-python {
-      0%, 100% {
-        transform: translateY(0) rotate(0deg);
+    /* Landscape mobile */
+    @media screen and (max-height: 500px) and (orientation: landscape) {
+      #home {
+        min-height: auto;
+        padding-top: 4rem;
+        padding-bottom: 1rem;
       }
-      25% {
-        transform: translateY(-20px) rotate(5deg);
+
+      .relative.image-float div[style*="width: 220px"] {
+        width: 120px !important;
+        height: 120px !important;
       }
-      50% {
-        transform: translateY(0) rotate(0deg);
+
+      section {
+        padding: 1rem 0;
       }
-      75% {
-        transform: translateY(20px) rotate(-5deg);
+
+      .py-16, .py-20 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
       }
     }
 
-    .section-header {
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-header:before {
-      content: '';
-      position: absolute;
-      left: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      background-image: url('./tech_stacks/python.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    /* Enhanced section transitions */
-    section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Python loading animation for page load */
-    .python-loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--editor-bg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-    }
-
-    .python-loader img {
-      width: 100px;
-      height: 100px;
-      animation: pulse-python 2s infinite;
-    }
-
-    @keyframes pulse-python {
-      0% {
-        transform: scale(0.8);
-        opacity: 0.7;
+    /* Tablet specific adjustments */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .max-w-6xl {
+        padding-left: 2rem;
+        padding-right: 2rem;
       }
-      50% {
-        transform: scale(1.2);
-        opacity: 1;
+
+      .grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+        grid-template-columns: repeat(2, 1fr);
       }
-      100% {
-        transform: scale(0.8);
-        opacity: 0.7;
+
+      .code-container {
+        font-size: 0.9rem;
       }
     }
 
-    /* Python accent for navbar */
-    nav.fixed:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--python-blue), transparent);
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.75rem !important;
+      }
+
+      h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .code-container {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+      }
+
+      .btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .skill-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.625rem;
+      }
+
+      .project-card h3 {
+        font-size: 1.125rem;
+      }
+
+      .project-card p {
+        font-size: 0.8rem;
+      }
+
+      nav.fixed {
+        padding: 0.5rem 0.75rem;
+      }
+
+      .relative.image-float div[style*="width: 220px"] {
+        width: 180px !important;
+        height: 180px !important;
+      }
+
+      /* Even smaller text for very small screens */
+      .text-4xl, .text-5xl {
+        font-size: 1.875rem !important;
+      }
+
+      .text-3xl {
+        font-size: 1.5rem !important;
+      }
+
+      /* Reduce grid to single column on very small screens */
+      .grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      /* Contact section mobile improvements */
+      #contact .max-w-6xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+
+    /* Touch device optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      /* Remove hover effects on touch devices */
+      .project-card:hover {
+        transform: none;
+        border-color: var(--card-border);
+        box-shadow: var(--card-shadow);
+      }
+
+      .btn:hover::before {
+        left: -100%;
+      }
+
+      .skill-tag:hover {
+        transform: none;
+        background-color: rgba(55, 118, 171, 0.15);
+        border: 1px solid rgba(55, 118, 171, 0.3);
+      }
+
+      /* Improve touch targets */
+      .btn {
+        min-height: 48px;
+        padding: 0.875rem 1.5rem;
+      }
+
+      a, button {
+        min-height: 48px;
+      }
+
+      /* Better touch feedback */
+      .project-card:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+      }
+
+      .btn:active {
+        transform: scale(0.96);
+        transition: transform 0.1s ease;
+      }
+    }
+
+    /* Landscape mobile orientation */
+    @media screen and (max-height: 500px) and (orientation: landscape) {
+      #home {
+        min-height: auto;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+      }
+
+      .relative.image-float div[style*="width: 220px"] {
+        width: 160px !important;
+        height: 160px !important;
+      }
+
+      .py-16.md\\:py-20 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      section {
+        padding: 2rem 0;
+      }
     }
   </style>
 </head>
@@ -1607,7 +1302,7 @@
   <span class="code-comment"># About me</span>
   <span class="code-keyword">def</span> <span class="code-method">__init__</span>(<span class="code-symbol">self</span>):
     <span class="code-symbol">self.name</span> = <span class="code-string name-glow">"Rachit Poudel"</span>
-    <span class="code-symbol">self.role</span>. = <span class="code-string role-glow">"Full-Stack Django Developer"</span>
+    <span class="code-symbol">self.role</span> = <span class="code-string role-glow">"Full-Stack Django Developer"</span>
     <span class="code-symbol">self.location</span> = <span class="code-string location-glow">"Kathmandu, Nepal"</span>
     <span class="code-symbol">self.skills</span> = [<span class="code-string skills-glow">"Python"</span>, <span class="code-string skills-glow">"Django"</span>, <span class="code-string skills-glow">"JavaScript"</span>, <span class="code-string skills-glow">"PHP"</span>, <span class="code-string skills-glow">"PostgreSQL"</span>]
     <span class="code-symbol">self.experience</span> = <span class="code-string experience-glow">"2+ years"</span>
@@ -2426,6 +2121,88 @@
       
       createParticles();
       initScrollReveal();
+      
+      // Mobile-specific improvements
+      function initMobileOptimizations() {
+        // Prevent zoom on input focus for iOS
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+          input.addEventListener('focus', function() {
+            if (window.innerWidth <= 768) {
+              document.querySelector('meta[name=viewport]').setAttribute('content', 
+                'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+            }
+          });
+          
+          input.addEventListener('blur', function() {
+            if (window.innerWidth <= 768) {
+              document.querySelector('meta[name=viewport]').setAttribute('content', 
+                'width=device-width, initial-scale=1.0');
+            }
+          });
+        });
+
+        // Better mobile navigation
+        let touchStartY = 0;
+        let touchEndY = 0;
+        
+        document.addEventListener('touchstart', function(e) {
+          touchStartY = e.changedTouches[0].screenY;
+        });
+        
+        document.addEventListener('touchend', function(e) {
+          touchEndY = e.changedTouches[0].screenY;
+          handleSwipe();
+        });
+        
+        function handleSwipe() {
+          const swipeDistance = touchStartY - touchEndY;
+          const minSwipeDistance = 50;
+          
+          if (Math.abs(swipeDistance) > minSwipeDistance) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (swipeDistance > 0 && !mobileMenu.classList.contains('hidden')) {
+              // Swipe up - close menu
+              mobileMenu.classList.add('hidden');
+            }
+          }
+        }
+
+        // Optimize animations for mobile
+        if (window.innerWidth <= 768) {
+          // Reduce animations on mobile for better performance
+          document.querySelectorAll('.python-icon-float, .particles').forEach(el => {
+            el.style.display = 'none';
+          });
+          
+          // Simplify hover effects
+          document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('touchstart', function() {
+              this.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('touchend', function() {
+              this.style.transform = 'translateY(0)';
+            });
+          });
+        }
+
+        // Fix iOS Safari viewport issues
+        function fixIOSViewport() {
+          if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            
+            window.addEventListener('resize', function() {
+              const vh = window.innerHeight * 0.01;
+              document.documentElement.style.setProperty('--vh', `${vh}px`);
+            });
+          }
+        }
+        
+        fixIOSViewport();
+      }
+      
+      initMobileOptimizations();
       
       // Rest of your existing code...
     });
